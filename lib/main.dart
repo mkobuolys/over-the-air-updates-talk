@@ -25,6 +25,7 @@ class _FlutterDeckApp extends StatelessWidget {
       ),
       slides: const [
         TitleSlide(),
+        ...introSlides,
         ThankYouSlide(),
       ],
       speakerInfo: const FlutterDeckSpeakerInfo(
