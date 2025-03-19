@@ -1,0 +1,26 @@
+name: over_the_air_updates_talk
+description: "From fear to air: embracing over-the-air app updates."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.2
+
+dependencies:
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+  flutter_deck: ^0.18.0
+  flutter_deck_web_client: ^0.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lint: ^2.7.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
