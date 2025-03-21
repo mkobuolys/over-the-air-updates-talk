@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 import 'slides/slides.dart';
+import 'theme.dart';
 
 void main() {
   runApp(const _FlutterDeckApp());
@@ -26,6 +27,9 @@ class _FlutterDeckApp extends StatelessWidget {
       slides: const [
         TitleSlide(),
         ...introSlides,
+        ...limboSlides,
+        ...heresySlides,
+        ...treacherySlides,
         ThankYouSlide(),
       ],
       speakerInfo: const FlutterDeckSpeakerInfo(
@@ -34,6 +38,8 @@ class _FlutterDeckApp extends StatelessWidget {
         socialHandle: '@mkobuolys | kazlauskas.dev',
         imagePath: 'assets/speaker.png',
       ),
+      darkTheme: PresentationTheme.darkTheme,
+      lightTheme: PresentationTheme.lightTheme,
     );
   }
 }

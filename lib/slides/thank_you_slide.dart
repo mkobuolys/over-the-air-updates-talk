@@ -12,16 +12,15 @@ class ThankYouSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = FlutterDeckTheme.of(context).titleSlideTheme;
+
     return FlutterDeckSlide.blank(
       builder: (context) => Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Thank you! 🫡',
-              style: TextStyle(fontSize: 96, fontWeight: FontWeight.bold),
-            ),
+            Text('Thank you! 🫡', style: theme.titleTextStyle),
             const SizedBox(height: 48),
             FlutterDeckSpeakerInfoWidget(
               speakerInfo: context.flutterDeck.speakerInfo!,

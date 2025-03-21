@@ -12,19 +12,21 @@ class TitleSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = FlutterDeckTheme.of(context).titleSlideTheme;
+
     return FlutterDeckSlide.blank(
       builder: (context) => Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               'From fear to air 🚀',
-              style: TextStyle(fontSize: 96, fontWeight: FontWeight.bold),
+              style: theme.titleTextStyle,
             ),
-            const Text(
+            Text(
               'Embracing over-the-air app updates',
-              style: TextStyle(fontSize: 80, height: 1.0),
+              style: theme.subtitleTextStyle,
             ),
             const SizedBox(height: 64),
             FlutterDeckSpeakerInfoWidget(
