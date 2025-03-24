@@ -6,6 +6,7 @@ class IntercomSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/intercom',
+            header: FlutterDeckHeaderConfiguration(title: 'Intercom'),
           ),
         );
 
