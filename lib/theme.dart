@@ -30,7 +30,7 @@ abstract final class PresentationTheme {
     subtitleTextStyle: TextStyle(
       fontSize: 64,
       fontWeight: FontWeight.w500,
-      height: 1.0,
+      height: 1,
     ),
   );
 
@@ -50,6 +50,6 @@ abstract final class PresentationTheme {
 
   static const _titleSlideTheme = FlutterDeckTitleSlideThemeData(
     titleTextStyle: TextStyle(fontSize: 96, fontWeight: FontWeight.bold),
-    subtitleTextStyle: TextStyle(fontSize: 80, height: 1.0),
+    subtitleTextStyle: TextStyle(fontSize: 80, height: 1),
   );
 }

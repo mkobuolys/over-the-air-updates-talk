@@ -30,6 +30,7 @@ class _FlutterDeckApp extends StatelessWidget {
         ...limboSlides,
         ...heresySlides,
         ...treacherySlides,
+        PresentationLinkSlide(),
         ThankYouSlide(),
       ],
       speakerInfo: const FlutterDeckSpeakerInfo(
