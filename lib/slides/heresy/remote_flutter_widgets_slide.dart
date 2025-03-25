@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-class FirebaseRemoteConfigSlide extends FlutterDeckSlideWidget {
-  const FirebaseRemoteConfigSlide()
+class RemoteFlutterWidgetsSlide extends FlutterDeckSlideWidget {
+  const RemoteFlutterWidgetsSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/firebase-remote-config',
+            route: '/remote-flutter-widgets',
             header: FlutterDeckHeaderConfiguration(
-              title: 'Configuration files - Firebase Remote Config',
+              title: 'Remote Flutter Widgets - rfw',
             ),
           ),
         );

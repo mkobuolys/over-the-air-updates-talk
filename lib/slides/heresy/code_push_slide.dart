@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-class FirebaseRemoteConfigSlide extends FlutterDeckSlideWidget {
-  const FirebaseRemoteConfigSlide()
+class CodePushSlide extends FlutterDeckSlideWidget {
+  const CodePushSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/firebase-remote-config',
+            route: '/code-push',
             header: FlutterDeckHeaderConfiguration(
-              title: 'Configuration files - Firebase Remote Config',
+              title: 'CodePush - Shorebird',
             ),
           ),
         );
