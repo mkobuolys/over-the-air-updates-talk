@@ -6,7 +6,9 @@ class CrowdinSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/crowdin',
-            header: FlutterDeckHeaderConfiguration(title: 'Crowdin'),
+            header: FlutterDeckHeaderConfiguration(
+              title: 'Localization - Crowdin',
+            ),
           ),
         );
 
@@ -21,6 +23,7 @@ class CrowdinSlide extends FlutterDeckSlideWidget {
       builder: (context) => Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
+          spacing: 4,
           children: [
             Expanded(
               child: Center(
@@ -30,7 +33,6 @@ class CrowdinSlide extends FlutterDeckSlideWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 4),
             Text(
               'https://support.crowdin.com/content-delivery',
               style: FlutterDeckImageSlideTheme.of(context).labelTextStyle,
