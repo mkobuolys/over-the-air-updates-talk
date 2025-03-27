@@ -14,8 +14,9 @@ class CodePushSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.blank(
-      builder: (context) => const Placeholder(),
+    return FlutterDeckSlide.image(
+      imageBuilder: (context) => Image.asset('assets/shorebird.png'),
+      label: 'https://shorebird.dev',
     );
   }
 }
