@@ -9,10 +9,13 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.8
+  device_preview: ^1.2.0
   flutter:
     sdk: flutter
   flutter_deck: ^0.18.0
   flutter_deck_web_client: ^0.2.0
+  rfw_demo:
+    path: packages/rfw_demo
 
 dev_dependencies:
   flutter_test:

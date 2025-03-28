@@ -6,6 +6,6 @@ import 'web_view_slide.dart';
 const heresySlides = [
   HeresySectionSlide(),
   WebViewSlide(),
-  CodePushSlide(),
   RemoteFlutterWidgetsSlide(),
+  CodePushSlide(),
 ];
