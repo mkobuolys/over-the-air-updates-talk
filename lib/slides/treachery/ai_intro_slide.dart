@@ -51,15 +51,21 @@ class _ContentState extends State<_Content> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ConfettiWidget(
-        blastDirectionality: BlastDirectionality.explosive,
-        emissionFrequency: 0.05,
-        minBlastForce: 15,
-        confettiController: _controller,
-        child: Text(
-          'AI',
-          style: FlutterDeckBigFactSlideTheme.of(context).titleTextStyle,
-        ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          ConfettiWidget(
+            blastDirectionality: BlastDirectionality.explosive,
+            emissionFrequency: 0.05,
+            minBlastForce: 30,
+            maxBlastForce: 50,
+            confettiController: _controller,
+          ),
+          Text(
+            'AI',
+            style: FlutterDeckBigFactSlideTheme.of(context).titleTextStyle,
+          ),
+        ],
       ),
     );
   }
