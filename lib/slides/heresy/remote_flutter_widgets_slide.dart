@@ -1,7 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:rfw_demo/app.dart';
+import 'package:rfw_demo/rfw_demo.dart';
 
 const _simpleCounterCode = '''
   import core.widgets;

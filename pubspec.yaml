@@ -8,6 +8,8 @@ environment:
   sdk: ^3.6.2
 
 dependencies:
+  ai_slide_content:
+    path: packages/ai_slide_content
   confetti: ^0.8.0
   cupertino_icons: ^1.0.8
   device_preview: ^1.2.0
