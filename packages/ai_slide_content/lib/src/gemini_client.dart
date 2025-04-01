@@ -32,6 +32,8 @@ Rules:
 - Slide should contain a title and a list of items related to the topic.
 - Generate a list of 3 items.
 - Each item should be a maximum of 100 characters.
+- Slide should contain an image related to the topic.
+- Use image.pollinations.ai for image generation.
 
 Topic: $topic
 Example code: `$exampleCode`
