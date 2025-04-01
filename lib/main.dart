@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 import 'slides/slides.dart';
@@ -23,6 +24,18 @@ class _FlutterDeckApp extends StatelessWidget {
           aspectRatio: const FlutterDeckAspectRatio.ratio16x10(),
         ),
         transition: const FlutterDeckTransition.fade(),
+        controls: const FlutterDeckControlsConfiguration(
+          shortcuts: FlutterDeckShortcutsConfiguration(
+            toggleMarker: SingleActivator(
+              LogicalKeyboardKey.keyM,
+              control: true,
+            ),
+            toggleNavigationDrawer: SingleActivator(
+              LogicalKeyboardKey.period,
+              control: true,
+            ),
+          ),
+        ),
       ),
       slides: const [
         TitleSlide(),

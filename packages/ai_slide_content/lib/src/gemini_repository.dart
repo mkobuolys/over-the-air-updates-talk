@@ -1,6 +1,58 @@
+import 'dart:convert';
+
 import 'package:flutter/widgets.dart';
 
 import 'gemini_client.dart';
+
+const _exampleCode = '''
+import core.widgets;
+import core.material;
+
+widget root = Row(
+  children: [
+    Expanded(
+      child: Column(
+        crossAxisAlignment: "start",
+        children: [
+          Text(
+            text: "Dante's Divine Comedy",
+            style: { fontSize: 80.0 },
+          ),
+          SizedBox(height: 48.0),
+          FactRow(text: "Written in the early 14th century."),
+          SizedBox(height: 32.0),
+          FactRow(text: "Divided into Inferno, Purgatorio, and Paradiso."),
+          SizedBox(height: 32.0),
+          FactRow(text: "Considered one of the greatest works of world literature."),
+        ],
+      ),
+    ),
+    SizedBox(width: 48.0),
+    Expanded(
+      child: Image(
+        source: "https://image.pollinations.ai/prompt/divine%20comedy%20dante",
+      ),
+    ),
+  ],
+);
+
+widget FactRow = Row(
+  crossAxisAlignment: "start",
+  children: [
+    Text(
+      text: '-',
+      style: { fontSize: 56.0 },
+    ),
+    SizedBox(width: 16.0),
+    Expanded(
+      child: Text(
+        text: args.text,
+        style: { fontSize: 56.0 },
+      ),
+    ),
+  ],
+);
+''';
 
 class GeminiRepository {
   const GeminiRepository({
@@ -9,11 +61,15 @@ class GeminiRepository {
 
   final GeminiClient _client;
 
-  Future<String?> generateSlideContent() async {
+  Future<String?> generateSlideContent(String topic) async {
     try {
-      final response = await _client.generateSlideContent();
+      final response = await _client.generateSlideContent(topic, _exampleCode);
 
-      return response;
+      if (response == null) return null;
+
+      if (jsonDecode(response) case {'code': String code}) return code;
+
+      return null;
     } catch (e) {
       debugPrint('Problem with the Generative AI service: $e');
 
@@ -23,26 +79,13 @@ class GeminiRepository {
 }
 
 class FakeGeminiRepository implements GeminiRepository {
-  static const _code = '''
-import core.widgets;
-import core.material;
-
-widget root = Center(
-  child: Text(
-    text: "Hello from the generated code!",
-    textAlign: "center",
-    style: { fontSize: 64.0 },
-  ),
-);
-''';
-
   const FakeGeminiRepository();
 
   @override
-  Future<String?> generateSlideContent() async {
+  Future<String?> generateSlideContent(String topic) async {
     await Future.delayed(const Duration(seconds: 2));
 
-    return _code;
+    return _exampleCode;
   }
 
   @override

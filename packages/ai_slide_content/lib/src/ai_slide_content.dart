@@ -7,9 +7,13 @@ import 'gemini_client.dart';
 import 'gemini_repository.dart';
 
 class AISlideContent extends StatefulWidget {
-  const AISlideContent({super.key}) : useFakeContent = false;
-  const AISlideContent.fake({super.key}) : useFakeContent = true;
+  const AISlideContent({
+    required this.topicPrompt,
+    required this.useFakeContent,
+    super.key,
+  });
 
+  final String topicPrompt;
   final bool useFakeContent;
 
   @override
@@ -27,6 +31,8 @@ class _AISlideContentState extends State<AISlideContent> {
   final _data = DynamicContent();
   final _runtime = Runtime();
 
+  late var _topicPrompt = widget.topicPrompt;
+
   @override
   void initState() {
     super.initState();
@@ -37,12 +43,20 @@ class _AISlideContentState extends State<AISlideContent> {
     _repository = widget.useFakeContent
         ? const FakeGeminiRepository()
         : GeminiRepository(client: GeminiClient());
+  }
 
+  @override
+  void didUpdateWidget(covariant AISlideContent oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.topicPrompt == widget.topicPrompt) return;
+
+    _topicPrompt = widget.topicPrompt;
     _generateContent();
   }
 
   Future<void> _generateSlideContent() async {
-    final code = await _repository.generateSlideContent();
+    final code = await _repository.generateSlideContent(_topicPrompt);
 
     if (code == null) {
       return Future.error(Exception('Slide content generation failed.'));
@@ -61,6 +75,15 @@ class _AISlideContentState extends State<AISlideContent> {
 
   @override
   Widget build(BuildContext context) {
+    if (_topicPrompt.isEmpty) {
+      return const Center(
+        child: Text(
+          'Enter a topic to generate content for this slide',
+          style: TextStyle(fontSize: 64.0),
+        ),
+      );
+    }
+
     return FutureBuilder(
       future: _geminiResponseFuture,
       builder: (context, snapshot) {
@@ -97,29 +120,23 @@ class _LoadingContent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  color: Colors.grey,
-                  height: 96.0,
-                  width: 640.0,
-                ),
-                SizedBox(height: 64.0),
-                for (var i = 0; i < 3; i++) ...[
-                  Container(
-                    color: Colors.grey,
-                    height: 64.0,
-                    width: 960.0,
-                  ),
-                  SizedBox(height: 8.0),
-                  Container(
-                    color: Colors.grey,
-                    height: 64.0,
-                    width: 640.0,
-                  ),
-                  SizedBox(height: 32.0),
-                ]
+                Container(color: Colors.grey, height: 96.0, width: 640.0),
+                const SizedBox(height: 64.0),
+                Container(color: Colors.grey, height: 64.0, width: 960.0),
+                const SizedBox(height: 16.0),
+                Container(color: Colors.grey, height: 64.0, width: 640.0),
+                const SizedBox(height: 32.0),
+                Container(color: Colors.grey, height: 64.0, width: 960.0),
+                const SizedBox(height: 16.0),
+                Container(color: Colors.grey, height: 64.0, width: 640.0),
+                const SizedBox(height: 32.0),
+                Container(color: Colors.grey, height: 64.0, width: 960.0),
+                const SizedBox(height: 16.0),
+                Container(color: Colors.grey, height: 64.0, width: 640.0),
               ],
             ),
           ),
+          const SizedBox(width: 64.0),
           Expanded(
             child: Container(
               color: Colors.grey,

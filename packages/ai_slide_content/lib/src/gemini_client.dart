@@ -1,9 +1,5 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
 
-const _prompt = '''
-Generate Flutter code for a slide content.
-''';
-
 class GeminiClient {
   GeminiClient()
       : _model = GenerativeModel(
@@ -25,8 +21,23 @@ class GeminiClient {
 
   final GenerativeModel _model;
 
-  Future<String?> generateSlideContent() async {
-    final response = await _model.generateContent([Content.text(_prompt)]);
+  Future<String?> generateSlideContent(String topic, String exampleCode) async {
+    final prompt = '''
+Generate a slide code about the provided topic in RFW (Remote Flutter Widget) format.
+
+Rules:
+- Use the provided topic to generate the slide content.
+- Use the provided example code as a reference for the structure and style.
+- The generated code should be in RFW format.
+- Slide should contain a title and a list of items related to the topic.
+- Generate a list of 3 items.
+- Each item should be a maximum of 100 characters.
+
+Topic: $topic
+Example code: `$exampleCode`
+''';
+
+    final response = await _model.generateContent([Content.text(prompt)]);
 
     return response.text;
   }
