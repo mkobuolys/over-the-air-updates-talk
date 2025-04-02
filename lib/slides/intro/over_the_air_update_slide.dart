@@ -6,6 +6,7 @@ class OverTheAirUpdateSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/over-the-air-update',
+            title: 'Over-the-air app updates',
           ),
         );
 

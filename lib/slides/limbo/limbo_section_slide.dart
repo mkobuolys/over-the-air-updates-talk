@@ -6,6 +6,7 @@ class LimboSectionSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/limbo-section',
+            title: 'Level 1: Limbo',
           ),
         );
 

@@ -25,6 +25,7 @@ class FirebaseRemoteConfigSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/firebase-remote-config',
+            title: 'DEMO: Firebase Remote Config',
             header: FlutterDeckHeaderConfiguration(
               title: 'Configuration files - Firebase Remote Config',
             ),

@@ -6,6 +6,7 @@ class DanteDivineComedyCoverSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/dante-divine-comedy-cover',
+            title: '"Divine Comedy" by Dante Alighieri',
           ),
         );
 

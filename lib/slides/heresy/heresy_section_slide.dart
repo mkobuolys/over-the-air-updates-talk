@@ -6,6 +6,7 @@ class HeresySectionSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/heresy-section',
+            title: 'Level 2: Heresy',
           ),
         );
 

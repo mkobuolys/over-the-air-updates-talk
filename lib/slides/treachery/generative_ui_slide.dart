@@ -6,6 +6,9 @@ class GenerativeUiSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/generative-ui',
+            header: FlutterDeckHeaderConfiguration(
+              title: 'Generative UI = AI + OTA updates',
+            ),
           ),
         );
 

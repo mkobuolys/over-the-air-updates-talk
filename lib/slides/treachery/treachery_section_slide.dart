@@ -6,6 +6,7 @@ class TreacherySectionSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/treachery-section',
+            title: 'Level 3: Treachery',
           ),
         );
 

@@ -85,6 +85,7 @@ class RemoteFlutterWidgetsSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/remote-flutter-widgets',
+            title: 'DEMO: Remote Flutter Widgets (rfw)',
             header: FlutterDeckHeaderConfiguration(
               title: 'Remote Flutter Widgets - rfw',
             ),

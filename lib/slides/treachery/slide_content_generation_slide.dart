@@ -9,6 +9,7 @@ class SlideContentGenerationSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/slide-content-generation',
+            title: 'DEMO: Slide content generation',
             steps: _useFakeMode ? 2 : 1,
           ),
         );

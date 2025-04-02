@@ -6,6 +6,7 @@ class ReadingMoreResolutionSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/reading-more-resolution',
+            title: "New Year's resolution - reading more",
           ),
         );
 

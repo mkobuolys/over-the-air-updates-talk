@@ -6,6 +6,7 @@ class NewYearSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/new-year',
+            title: 'New Year - new me',
           ),
         );
 

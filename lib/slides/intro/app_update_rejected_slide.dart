@@ -6,6 +6,7 @@ class AppUpdateRejectedSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/app-update-rejected',
+            title: 'App update struggles',
           ),
         );
 
