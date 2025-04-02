@@ -32,6 +32,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+.mason/
 
 # Symbolication related
 app.*.symbols
