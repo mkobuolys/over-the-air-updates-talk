@@ -31,6 +31,7 @@ class _Content extends StatefulWidget {
 class _ContentState extends State<_Content> {
   late final TextEditingController _controller;
   var _topicPrompt = '';
+  var _generatedCode = '';
 
   @override
   void initState() {
@@ -49,7 +50,10 @@ class _ContentState extends State<_Content> {
   void _onGenerate() {
     if (!mounted) return;
 
-    setState(() => _topicPrompt = _controller.text);
+    setState(() {
+      _generatedCode = '';
+      _topicPrompt = _controller.text;
+    });
   }
 
   void _reset() {
@@ -76,6 +80,33 @@ class _ContentState extends State<_Content> {
     _onGenerate();
   }
 
+  void _onContentGenerated(String code) {
+    setState(() => _generatedCode = code);
+  }
+
+  void _showGeneratedCode() {
+    if (_generatedCode.isEmpty) return;
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Generated Code'),
+        content: SingleChildScrollView(
+          child: FlutterDeckCodeHighlight(
+            code: _generatedCode,
+            textStyle: FlutterDeckTheme.of(context).textTheme.bodyLarge,
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: Navigator.of(context).pop,
+            child: const Text('Close'),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
@@ -94,6 +125,7 @@ class _ContentState extends State<_Content> {
             child: AISlideContent(
               topicPrompt: _topicPrompt,
               useFakeContent: _useFakeMode,
+              onContentGenerated: _onContentGenerated,
             ),
           ),
           Container(
@@ -103,28 +135,38 @@ class _ContentState extends State<_Content> {
             ),
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              spacing: 32.0,
               children: [
-                const SizedBox.shrink(),
                 Expanded(
-                  child: _useFakeMode
-                      ? Text(
-                          _controller.text.isNotEmpty
-                              ? _controller.text
-                              : hintText,
-                          style: const TextStyle(fontSize: 36.0),
-                        )
-                      : TextField(
-                          controller: _controller,
-                          decoration: const InputDecoration(
-                            hintText: hintText,
-                            hintStyle: TextStyle(fontSize: 36.0),
-                            border: InputBorder.none,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                    child: _useFakeMode
+                        ? Text(
+                            _controller.text.isNotEmpty
+                                ? _controller.text
+                                : hintText,
+                            style: const TextStyle(fontSize: 36.0),
+                          )
+                        : TextField(
+                            controller: _controller,
+                            decoration: const InputDecoration(
+                              hintText: hintText,
+                              hintStyle: TextStyle(fontSize: 36.0),
+                              border: InputBorder.none,
+                            ),
+                            onSubmitted: (_) => _onGenerate(),
+                            style: const TextStyle(fontSize: 36.0),
                           ),
-                          onSubmitted: (_) => _onGenerate(),
-                          style: const TextStyle(fontSize: 36.0),
-                        ),
+                  ),
                 ),
+                IconButton(
+                  style: IconButton.styleFrom(
+                    foregroundColor: colorScheme.primary,
+                  ),
+                  onPressed:
+                      _generatedCode.isNotEmpty ? _showGeneratedCode : null,
+                  icon: const Icon(Icons.code, size: 36.0),
+                ),
+                const SizedBox(width: 16.0),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     backgroundColor: colorScheme.primary,

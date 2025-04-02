@@ -10,11 +10,13 @@ class AISlideContent extends StatefulWidget {
   const AISlideContent({
     required this.topicPrompt,
     required this.useFakeContent,
+    required this.onContentGenerated,
     super.key,
   });
 
   final String topicPrompt;
   final bool useFakeContent;
+  final ValueSetter<String> onContentGenerated;
 
   @override
   State<AISlideContent> createState() => _AISlideContentState();
@@ -61,6 +63,8 @@ class _AISlideContentState extends State<AISlideContent> {
     if (code == null) {
       return Future.error(Exception('Slide content generation failed.'));
     }
+
+    widget.onContentGenerated(code);
 
     final remoteWidgets = parseLibraryFile(code);
 
