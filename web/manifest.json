@@ -1,6 +1,6 @@
 {
-  "name": "OTA Updates presentation",
-  "short_name": "OTA Updates",
+  "name": "OTA App Updates presentation",
+  "short_name": "OTA App Updates",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",
