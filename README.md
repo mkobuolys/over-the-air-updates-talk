@@ -37,6 +37,14 @@ For the best experience, use the macOS build with the `--release` flag:
 flutter run -d macos --release
 ```
 
+### Running a short version of the slides
+
+To run a short version of the slides, which is suitable for a 10-minute talk, you can pass the `USE_SHORT_VERSION` environment variable to the app. You can do this by using the `--dart-define` flag when running the app:
+
+```
+flutter run --dart-define USE_SHORT_VERSION=true
+```
+
 ### Enabling generative AI features
 
 To enable the generative AI features in the slides (using Gemini), you need to pass the `GEMINI_API_KEY` environment variable to the app. You can do this by using the `--dart-define` flag when running the app:

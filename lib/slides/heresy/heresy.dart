@@ -3,6 +3,13 @@ import 'heresy_section_slide.dart';
 import 'remote_flutter_widgets_slide.dart';
 import 'web_view_slide.dart';
 
+const heresySlidesShort = [
+  HeresySectionSlide(),
+  WebViewSlide(),
+  RemoteFlutterWidgetsSlide(),
+  CodePushSlide(),
+];
+
 const heresySlides = [
   HeresySectionSlide(),
   WebViewSlide(),

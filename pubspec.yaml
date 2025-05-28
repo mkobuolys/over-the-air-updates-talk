@@ -15,7 +15,7 @@ dependencies:
   device_preview: ^1.2.0
   flutter:
     sdk: flutter
-  flutter_deck: ^0.18.0
+  flutter_deck: ^0.19.0
   flutter_deck_web_client: ^0.2.0
   rfw_demo:
     path: packages/rfw_demo
