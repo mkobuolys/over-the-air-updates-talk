@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
+import '../../extensions/extensions.dart';
+
 class GenerativeUiSlide extends FlutterDeckSlideWidget {
   const GenerativeUiSlide()
       : super(
@@ -15,7 +17,9 @@ class GenerativeUiSlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
-      imageBuilder: (context) => Image.asset('assets/generative-ui-chart.png'),
+      imageBuilder: (context) => Image.asset(
+        context.getThemeAssetName('generative-ui-chart.png'),
+      ),
     );
   }
 }

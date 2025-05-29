@@ -3,13 +3,13 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 import '../../extensions/extensions.dart';
 
-class FlutterArchitectureShorebirdSlide extends FlutterDeckSlideWidget {
-  const FlutterArchitectureShorebirdSlide()
+class AbTestingSlide extends FlutterDeckSlideWidget {
+  const AbTestingSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/flutter-architecture-shorebird',
+            route: '/ab-testing',
             header: FlutterDeckHeaderConfiguration(
-              title: 'Flutter architecture - Shorebird',
+              title: 'A/B Testing - feature flag + analytics',
             ),
           ),
         );
@@ -18,7 +18,7 @@ class FlutterArchitectureShorebirdSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset(
-        context.getThemeAssetName('flutter-architecture-shorebird.png'),
+        context.getThemeAssetName('ab-test.png'),
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
+import '../../extensions/extensions.dart';
+
 class FlutterArchitectureSimplifiedSlide extends FlutterDeckSlideWidget {
   const FlutterArchitectureSimplifiedSlide()
       : super(
@@ -16,7 +18,7 @@ class FlutterArchitectureSimplifiedSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset(
-        'assets/flutter-architecture-simplified.png',
+        context.getThemeAssetName('flutter-architecture-simplified.png'),
       ),
     );
   }

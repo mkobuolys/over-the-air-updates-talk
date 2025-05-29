@@ -3,13 +3,13 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 import '../../extensions/extensions.dart';
 
-class FlutterArchitectureShorebirdSlide extends FlutterDeckSlideWidget {
-  const FlutterArchitectureShorebirdSlide()
+class PersonalizedConfigSlide extends FlutterDeckSlideWidget {
+  const PersonalizedConfigSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/flutter-architecture-shorebird',
+            route: '/personalized-config',
             header: FlutterDeckHeaderConfiguration(
-              title: 'Flutter architecture - Shorebird',
+              title: 'Personalized configuration',
             ),
           ),
         );
@@ -18,7 +18,7 @@ class FlutterArchitectureShorebirdSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset(
-        context.getThemeAssetName('flutter-architecture-shorebird.png'),
+        context.getThemeAssetName('personalized-config.png'),
       ),
     );
   }
