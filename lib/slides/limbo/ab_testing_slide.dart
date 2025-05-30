@@ -1,5 +1,7 @@
-import 'package:flutter/widgets.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:notes_app/notes_app.dart';
 
 import '../../extensions/extensions.dart';
 
@@ -16,10 +18,65 @@ class AbTestingSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.image(
-      imageBuilder: (context) => Image.asset(
-        context.getThemeAssetName('ab-test.png'),
+    return FlutterDeckSlide.blank(
+      builder: (context) => Row(
+        spacing: 64.0,
+        children: [
+          Expanded(
+            flex: 3,
+            child: Image.asset(context.getThemeAssetName('ab-test.png')),
+          ),
+          const Expanded(flex: 2, child: _NotesApp()),
+        ],
       ),
+    );
+  }
+}
+
+class _NotesApp extends StatefulWidget {
+  const _NotesApp();
+
+  @override
+  State<_NotesApp> createState() => _NotesAppState();
+}
+
+class _NotesAppState extends State<_NotesApp> {
+  var _showAiButtonAsFab = true;
+
+  void _setShowAiButtonAsFab(bool value) {
+    setState(() => _showAiButtonAsFab = value);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      spacing: 16.0,
+      children: [
+        Expanded(
+          child: DeviceFrame(
+            device: Devices.ios.iPhone13,
+            screen: NotesApp(aiButtonAsFab: _showAiButtonAsFab),
+          ),
+        ),
+        RadioListTile(
+          value: true,
+          groupValue: _showAiButtonAsFab,
+          onChanged: (_) => _setShowAiButtonAsFab(true),
+          title: Text(
+            'A: Floating action button',
+            style: Theme.of(context).textTheme.displayMedium,
+          ),
+        ),
+        RadioListTile(
+          value: false,
+          groupValue: _showAiButtonAsFab,
+          onChanged: (_) => _setShowAiButtonAsFab(false),
+          title: Text(
+            'B: App bar button',
+            style: Theme.of(context).textTheme.displayMedium,
+          ),
+        ),
+      ],
     );
   }
 }
