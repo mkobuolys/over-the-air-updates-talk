@@ -300,6 +300,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  notes_app:
+    dependency: "direct main"
+    description:
+      path: "packages/notes_app"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   path:
     dependency: transitive
     description:
