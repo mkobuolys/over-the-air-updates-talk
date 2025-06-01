@@ -1,5 +1,6 @@
 import 'ab_testing_slide.dart';
 import 'crowdin_slide.dart';
+import 'feature_flags_overview_slide.dart';
 import 'feature_flags_progressive_slide.dart';
 import 'feature_flags_slide.dart';
 import 'firebase_remote_config_slide.dart';
@@ -22,6 +23,7 @@ const limboSlides = [
   IntercomHelpCenterSlide(),
   RevenueCatPaywallSlide(),
   FirebaseRemoteConfigSlide(),
+  FeatureFlagsOverviewSlide(),
   FeatureFlagsSlide(),
   FeatureFlagsProgressiveSlide(),
   AbTestingSlide(),

@@ -4,7 +4,7 @@ class NotesApp extends StatelessWidget {
   const NotesApp({
     this.aiEnabled = true,
     this.aiButtonAsFab = true,
-    this.showPromoBanner = true,
+    this.showPromoBanner = false,
     super.key,
   });
 
