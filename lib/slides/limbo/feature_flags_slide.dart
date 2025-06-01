@@ -10,6 +10,7 @@ class FeatureFlagsSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/feature-flags',
+            title: 'DEMO: Feature flags',
             header: FlutterDeckHeaderConfiguration(
               title: 'Feature flags',
             ),

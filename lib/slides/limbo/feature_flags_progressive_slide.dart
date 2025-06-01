@@ -10,6 +10,7 @@ class FeatureFlagsProgressiveSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/feature-flags-progressive',
+            title: 'DEMO: Feature flags (progressive)',
             header: FlutterDeckHeaderConfiguration(
               title: 'Feature flags - progressive',
             ),

@@ -10,6 +10,7 @@ class PersonalizedConfigSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/personalized-config',
+            title: 'DEMO: Personalized configuration',
             header: FlutterDeckHeaderConfiguration(
               title: 'Personalized configuration',
             ),

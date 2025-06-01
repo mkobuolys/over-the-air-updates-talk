@@ -80,14 +80,14 @@ const _improvedCounterCode = '''
   );
 ''';
 
-class RemoteFlutterWidgetsSlide extends FlutterDeckSlideWidget {
-  const RemoteFlutterWidgetsSlide()
+class RemoteFlutterWidgetsDemoSlide extends FlutterDeckSlideWidget {
+  const RemoteFlutterWidgetsDemoSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/remote-flutter-widgets',
+            route: '/remote-flutter-widgets-demo',
             title: 'DEMO: Remote Flutter Widgets (rfw)',
             header: FlutterDeckHeaderConfiguration(
-              title: 'Remote Flutter Widgets - rfw',
+              title: 'Remote Flutter Widgets - configuration',
             ),
           ),
         );

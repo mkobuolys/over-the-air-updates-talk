@@ -10,6 +10,7 @@ class AbTestingSlide extends FlutterDeckSlideWidget {
       : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/ab-testing',
+            title: 'DEMO: A/B testing',
             header: FlutterDeckHeaderConfiguration(
               title: 'A/B Testing - feature flag + analytics',
             ),
