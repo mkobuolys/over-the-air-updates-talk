@@ -72,7 +72,7 @@ class _NotesAppState extends State<_NotesApp> {
           groupValue: _showAiButtonAsFab,
           onChanged: (_) => _setShowAiButtonAsFab(false),
           title: Text(
-            'B: App bar button',
+            'B: Bottom bar button',
             style: Theme.of(context).textTheme.displayMedium,
           ),
         ),

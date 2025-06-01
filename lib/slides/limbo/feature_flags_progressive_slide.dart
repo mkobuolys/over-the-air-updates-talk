@@ -62,9 +62,8 @@ class _NotesAppState extends State<_NotesApp> {
         ),
         Slider(
           value: _value,
-          onChanged: _updateValue,
-          label: '${(_value * 100).toInt()}%',
           divisions: 10,
+          onChanged: _updateValue,
         ),
         Row(
           mainAxisSize: MainAxisSize.min,
