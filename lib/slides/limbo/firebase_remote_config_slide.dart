@@ -133,11 +133,28 @@ final class SlideConfiguration {
   String toCodeJson() {
     return '''
 {
-  "alignment": "${alignment.toString().split('.').last}",
+  "alignment": "${alignment.toShortString()}",
   "backgroundColor": "#${backgroundColor.hex}",
   "fontSize": $fontSize,
   "showLogo": $showLogo
 }''';
+  }
+}
+
+extension AlignmentX on Alignment {
+  String toShortString() {
+    return switch (this) {
+      Alignment.bottomLeft => 'bottomLeft',
+      Alignment.bottomCenter => 'bottomCenter',
+      Alignment.bottomRight => 'bottomRight',
+      Alignment.centerLeft => 'centerLeft',
+      Alignment.center => 'center',
+      Alignment.centerRight => 'centerRight',
+      Alignment.topLeft => 'topLeft',
+      Alignment.topCenter => 'topCenter',
+      Alignment.topRight => 'topRight',
+      _ => 'Alignment(${x.toStringAsFixed(2)}, ${y.toStringAsFixed(2)})',
+    };
   }
 }
 
