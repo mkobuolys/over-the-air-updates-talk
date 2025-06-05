@@ -1,3 +1,4 @@
+import 'code_push_relevance_slide.dart';
 import 'code_push_slide.dart';
 import 'flutter_architecture_shorebird_slide.dart';
 import 'flutter_architecture_simplified_slide.dart';
@@ -20,6 +21,7 @@ const heresySlides = [
   RemoteFlutterWidgetsOverviewSlide(),
   RemoteFlutterWidgetsDemoSlide(),
   CodePushSlide(),
+  CodePushRelevanceSlide(),
   ShorebirdSlide(),
   FlutterArchitectureSimplifiedSlide(),
   FlutterArchitectureShorebirdSlide(),
