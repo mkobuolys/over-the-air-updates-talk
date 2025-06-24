@@ -15,8 +15,8 @@ dependencies:
   device_preview: ^1.2.0
   flutter:
     sdk: flutter
-  flutter_deck: ^0.19.0
-  flutter_deck_web_client: ^0.2.0
+  flutter_deck: ^0.20.0
+  flutter_deck_web_client: ^0.3.1
   notes_app:
     path: packages/notes_app
   rfw_demo:
