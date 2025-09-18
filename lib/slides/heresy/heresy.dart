@@ -17,12 +17,12 @@ const heresySlidesShort = [
 
 const heresySlides = [
   HeresySectionSlide(),
-  WebViewSlide(),
-  RemoteFlutterWidgetsOverviewSlide(),
-  RemoteFlutterWidgetsDemoSlide(),
   CodePushSlide(),
   CodePushRelevanceSlide(),
   ShorebirdSlide(),
   FlutterArchitectureSimplifiedSlide(),
   FlutterArchitectureShorebirdSlide(),
+  WebViewSlide(),
+  RemoteFlutterWidgetsOverviewSlide(),
+  RemoteFlutterWidgetsDemoSlide(),
 ];
