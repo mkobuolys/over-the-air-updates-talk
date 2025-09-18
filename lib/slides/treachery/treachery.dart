@@ -16,7 +16,7 @@ const treacherySlides = [
   TreacherySectionSlide(),
   AiIntroSlide(),
   DesignTrendsSlide(),
+  SlideContentGenerationSlide(),
   GenerativeUiOverviewSlide(),
   GenerativeUiSchemeSlide(),
-  SlideContentGenerationSlide(),
 ];
