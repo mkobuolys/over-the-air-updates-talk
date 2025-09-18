@@ -50,34 +50,34 @@ class _NotesAppState extends State<_NotesApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      spacing: 16.0,
-      children: [
-        Expanded(
-          child: DeviceFrame(
-            device: Devices.ios.iPhone13,
-            screen: NotesApp(aiButtonAsFab: _showAiButtonAsFab),
+    return RadioGroup<bool>(
+      groupValue: _showAiButtonAsFab,
+      onChanged: (value) => _setShowAiButtonAsFab(value!),
+      child: Column(
+        spacing: 16.0,
+        children: [
+          Expanded(
+            child: DeviceFrame(
+              device: Devices.ios.iPhone13,
+              screen: NotesApp(aiButtonAsFab: _showAiButtonAsFab),
+            ),
           ),
-        ),
-        RadioListTile(
-          value: true,
-          groupValue: _showAiButtonAsFab,
-          onChanged: (_) => _setShowAiButtonAsFab(true),
-          title: Text(
-            'A: Floating action button',
-            style: Theme.of(context).textTheme.displayMedium,
+          RadioListTile(
+            value: true,
+            title: Text(
+              'A: Floating action button',
+              style: Theme.of(context).textTheme.displayMedium,
+            ),
           ),
-        ),
-        RadioListTile(
-          value: false,
-          groupValue: _showAiButtonAsFab,
-          onChanged: (_) => _setShowAiButtonAsFab(false),
-          title: Text(
-            'B: Bottom bar button',
-            style: Theme.of(context).textTheme.displayMedium,
+          RadioListTile(
+            value: false,
+            title: Text(
+              'B: Bottom bar button',
+              style: Theme.of(context).textTheme.displayMedium,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
