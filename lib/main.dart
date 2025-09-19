@@ -55,6 +55,7 @@ class _FlutterDeckApp extends StatelessWidget {
         TitleSlide(),
         ...introSlides,
         ...contentSlides,
+        SummarySlide(),
         PresentationLinkSlide(),
         ThankYouSlide(),
       ],
