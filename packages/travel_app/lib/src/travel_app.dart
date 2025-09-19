@@ -4,10 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_genui/flutter_genui.dart';
-import 'package:flutter_genui/flutter_genui_dev.dart';
 import 'package:flutter_genui_firebase_ai/flutter_genui_firebase_ai.dart';
 
-import 'catalog.dart';
 import 'travel_planner_page.dart';
 
 /// The root widget for the travel application.
@@ -29,9 +27,6 @@ class TravelApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Agentic Travel Inc.',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-      ),
       home: _TravelAppBody(aiClient),
     );
   }
@@ -48,55 +43,19 @@ class _TravelAppBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tabs = {
-      'Travel': TravelPlannerPage(aiClient: aiClient),
-      'Widget Catalog': const CatalogTab(),
-    };
-    return DefaultTabController(
-      length: tabs.length,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          leading: const Icon(Icons.menu),
-          title: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Icon(Icons.local_airport),
-              SizedBox(width: 16.0), // Add spacing between icon and text
-              Text('Agentic Travel Inc.'),
-            ],
-          ),
-          actions: [
-            const Icon(Icons.person_outline),
-            const SizedBox(width: 8.0),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(Icons.local_airport),
+            SizedBox(width: 16.0), // Add spacing between icon and text
+            Text('Agentic Travel Inc.'),
           ],
-          bottom: TabBar(
-            tabs: tabs.entries.map((entry) => Tab(text: entry.key)).toList(),
-          ),
-        ),
-        body: TabBarView(
-          children: tabs.entries.map((entry) => entry.value).toList(),
         ),
       ),
+      body: TravelPlannerPage(aiClient: aiClient),
     );
   }
-}
-
-class CatalogTab extends StatefulWidget {
-  const CatalogTab({super.key});
-
-  @override
-  State<CatalogTab> createState() => _CatalogTabState();
-}
-
-class _CatalogTabState extends State<CatalogTab>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  Widget build(BuildContext context) {
-    super.build(context);
-    return CatalogView(catalog: travelAppCatalog);
-  }
-
-  @override
-  bool get wantKeepAlive => true;
 }

@@ -75,9 +75,11 @@ class _TravelPlannerPageState extends State<TravelPlannerPage>
     );
     final tools = _genUiManager.getTools();
     tools.add(ListHotelsTool(onListHotels: BookingService.instance.listHotels));
-    _aiClient =
-        widget.aiClient ??
-        FirebaseAiClient(tools: tools, systemInstruction: prompt);
+    loadImagesJson().then((_) {
+      _aiClient =
+          widget.aiClient ??
+          FirebaseAiClient(tools: tools, systemInstruction: prompt);
+    });
     _genUiManager.surfaceUpdates.listen((update) {
       setState(() {
         switch (update) {

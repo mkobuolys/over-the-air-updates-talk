@@ -49,7 +49,7 @@ final image = CatalogItem(
         final fit = imageData.fit;
 
         if (location.startsWith('assets/')) {
-          return Image.asset(location, fit: fit);
+          return Image.asset(location, package: 'travel_app', fit: fit);
         } else {
           return Image.network(location, fit: fit);
         }

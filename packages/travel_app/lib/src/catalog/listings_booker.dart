@@ -5,7 +5,6 @@
 import 'package:dart_schema_builder/dart_schema_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_genui/flutter_genui.dart';
-
 import 'package:intl/intl.dart';
 
 import '../tools/booking/booking_service.dart';
@@ -280,6 +279,7 @@ class _ListingsBookerState extends State<_ListingsBooker> {
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
                             listing.images.first,
+                            package: 'travel_app',
                             width: 80,
                             height: 80,
                             fit: BoxFit.contain,
