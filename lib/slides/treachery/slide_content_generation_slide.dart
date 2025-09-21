@@ -6,19 +6,17 @@ const _useFakeMode = String.fromEnvironment('GEMINI_API_KEY').length == 0;
 
 class SlideContentGenerationSlide extends FlutterDeckSlideWidget {
   const SlideContentGenerationSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/slide-content-generation',
-            title: 'DEMO: Slide content generation',
-            steps: _useFakeMode ? 2 : 1,
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/slide-content-generation',
+          title: 'DEMO: Slide content generation',
+          steps: _useFakeMode ? 2 : 1,
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.blank(
-      builder: (context) => const _Content(),
-    );
+    return FlutterDeckSlide.blank(builder: (context) => const _Content());
   }
 }
 
@@ -163,8 +161,9 @@ class _ContentState extends State<_Content> {
                   style: IconButton.styleFrom(
                     foregroundColor: colorScheme.primary,
                   ),
-                  onPressed:
-                      _generatedCode.isNotEmpty ? _showGeneratedCode : null,
+                  onPressed: _generatedCode.isNotEmpty
+                      ? _showGeneratedCode
+                      : null,
                   icon: const Icon(Icons.code, size: 36.0),
                 ),
                 const SizedBox(width: 16.0),

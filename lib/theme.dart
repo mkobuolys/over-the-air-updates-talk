@@ -13,17 +13,18 @@ abstract final class PresentationTheme {
     titleSlideTheme: _titleSlideTheme,
   );
 
-  static final lightTheme = FlutterDeckThemeData.fromTheme(
-    ThemeData.from(
-      colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
-      useMaterial3: true,
-    ),
-  ).copyWith(
-    bigFactSlideTheme: _bigFactSlideTheme,
-    quoteSlideTheme: _quoteSlideTheme,
-    speakerInfoWidgetTheme: _speakerInfoWidgetTheme,
-    titleSlideTheme: _titleSlideTheme,
-  );
+  static final lightTheme =
+      FlutterDeckThemeData.fromTheme(
+        ThemeData.from(
+          colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+          useMaterial3: true,
+        ),
+      ).copyWith(
+        bigFactSlideTheme: _bigFactSlideTheme,
+        quoteSlideTheme: _quoteSlideTheme,
+        speakerInfoWidgetTheme: _speakerInfoWidgetTheme,
+        titleSlideTheme: _titleSlideTheme,
+      );
 
   static const _bigFactSlideTheme = FlutterDeckBigFactSlideThemeData(
     titleTextStyle: TextStyle(fontSize: 128, fontWeight: FontWeight.bold),
@@ -36,10 +37,7 @@ abstract final class PresentationTheme {
 
   static const _quoteSlideTheme = FlutterDeckQuoteSlideThemeData(
     quoteTextStyle: TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
-    attributionTextStyle: TextStyle(
-      fontSize: 48,
-      fontWeight: FontWeight.w500,
-    ),
+    attributionTextStyle: TextStyle(fontSize: 48, fontWeight: FontWeight.w500),
   );
 
   static const _speakerInfoWidgetTheme = FlutterDeckSpeakerInfoWidgetThemeData(

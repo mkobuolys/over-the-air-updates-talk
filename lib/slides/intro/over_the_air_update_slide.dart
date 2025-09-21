@@ -3,12 +3,12 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class OverTheAirUpdateSlide extends FlutterDeckSlideWidget {
   const OverTheAirUpdateSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/over-the-air-update',
-            title: 'Over-the-air app updates',
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/over-the-air-update',
+          title: 'Over-the-air app updates',
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

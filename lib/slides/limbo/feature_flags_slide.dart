@@ -7,15 +7,13 @@ import '../../extensions/extensions.dart';
 
 class FeatureFlagsSlide extends FlutterDeckSlideWidget {
   const FeatureFlagsSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/feature-flags',
-            title: 'DEMO: Feature flags',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Feature flags',
-            ),
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/feature-flags',
+          title: 'DEMO: Feature flags',
+          header: FlutterDeckHeaderConfiguration(title: 'Feature flags'),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

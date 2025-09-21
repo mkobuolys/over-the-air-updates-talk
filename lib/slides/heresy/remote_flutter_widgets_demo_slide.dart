@@ -82,21 +82,19 @@ const _improvedCounterCode = '''
 
 class RemoteFlutterWidgetsDemoSlide extends FlutterDeckSlideWidget {
   const RemoteFlutterWidgetsDemoSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/remote-flutter-widgets-demo',
-            title: 'DEMO: Remote Flutter Widgets (rfw)',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Remote Flutter Widgets - configuration',
-            ),
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/remote-flutter-widgets-demo',
+          title: 'DEMO: Remote Flutter Widgets (rfw)',
+          header: FlutterDeckHeaderConfiguration(
+            title: 'Remote Flutter Widgets - configuration',
           ),
-        );
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.blank(
-      builder: (context) => const _SlideContent(),
-    );
+    return FlutterDeckSlide.blank(builder: (context) => const _SlideContent());
   }
 }
 

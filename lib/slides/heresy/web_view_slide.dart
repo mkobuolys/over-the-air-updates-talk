@@ -5,14 +5,12 @@ import '../../widgets/widgets.dart';
 
 class WebViewSlide extends FlutterDeckSlideWidget {
   const WebViewSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/web-view',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'WebView',
-            ),
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/web-view',
+          header: FlutterDeckHeaderConfiguration(title: 'WebView'),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

@@ -7,15 +7,15 @@ import '../../extensions/extensions.dart';
 
 class PersonalizedConfigSlide extends FlutterDeckSlideWidget {
   const PersonalizedConfigSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/personalized-config',
-            title: 'DEMO: Personalized configuration',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Personalized configuration',
-            ),
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/personalized-config',
+          title: 'DEMO: Personalized configuration',
+          header: FlutterDeckHeaderConfiguration(
+            title: 'Personalized configuration',
           ),
-        );
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +61,7 @@ class _NotesAppState extends State<_NotesApp> {
             screen: NotesApp(showPromoBanner: _value > 250),
           ),
         ),
-        Slider(
-          value: _value,
-          max: 1000.0,
-          onChanged: _updateValue,
-        ),
+        Slider(value: _value, max: 1000.0, onChanged: _updateValue),
         Row(
           mainAxisSize: MainAxisSize.min,
           spacing: 16.0,

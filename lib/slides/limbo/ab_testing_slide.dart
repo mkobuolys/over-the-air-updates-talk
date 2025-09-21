@@ -7,15 +7,15 @@ import '../../extensions/extensions.dart';
 
 class AbTestingSlide extends FlutterDeckSlideWidget {
   const AbTestingSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/ab-testing',
-            title: 'DEMO: A/B testing',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'A/B Testing - feature flag + analytics',
-            ),
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/ab-testing',
+          title: 'DEMO: A/B testing',
+          header: FlutterDeckHeaderConfiguration(
+            title: 'A/B Testing - feature flag + analytics',
           ),
-        );
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

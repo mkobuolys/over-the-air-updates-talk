@@ -240,26 +240,26 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_deck
-      sha256: c9d71518ce14f7e7c319b6ba834e1e597099077a8861724579b44aecf33e2ad2
+      sha256: "1dbf98695e75c05ed4dd46cbfce211daf82378857ad4c0d76789c37e5bf8a73d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.20.0"
+    version: "0.22.0"
   flutter_deck_client:
     dependency: transitive
     description:
       name: flutter_deck_client
-      sha256: "1021fc9dc96f91ed1330bb162ada3f6bd6a10ef02f8a19d3e888e9f533f435e9"
+      sha256: a0c2e4db2f95f17bf8b1ea709aed0c8460cc01e3ab8519ef0086e8ac3847db26
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0"
+    version: "0.3.0"
   flutter_deck_web_client:
     dependency: "direct main"
     description:
       name: flutter_deck_web_client
-      sha256: fd2488c45d17a57527653d403c63dec8992e8c05daabcb6bda8390746827b6a0
+      sha256: b3d81a9dee8094aef7ad77b48e0fd00bec5f947f4bde8f19c8ead1a0b0ff0400
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.1"
+    version: "0.4.0"
   flutter_genui:
     dependency: transitive
     description:
@@ -317,10 +317,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: ac294be30ba841830cfa146e5a3b22bb09f8dc5a0fdd9ca9332b04b0bde99ebf
+      sha256: b1488741c9ce37b72e026377c69a59c47378493156fc38efb5a54f6def3f92a3
       url: "https://pub.dev"
     source: hosted
-    version: "15.2.4"
+    version: "16.2.2"
   google_generative_ai:
     dependency: transitive
     description:
@@ -815,10 +815,10 @@ packages:
     dependency: transitive
     description:
       name: window_manager
-      sha256: "732896e1416297c63c9e3fb95aea72d0355f61390263982a47fd519169dc5059"
+      sha256: "7eb6d6c4164ec08e1bf978d6e733f3cebe792e2a23fb07cbca25c2872bfdbdcd"
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.3"
+    version: "0.5.1"
   xdg_directories:
     dependency: transitive
     description:
@@ -828,5 +828,5 @@ packages:
     source: hosted
     version: "1.1.0"
 sdks:
-  dart: ">=3.9.0 <4.0.0"
+  dart: ">=3.9.2 <4.0.0"
   flutter: ">=3.35.0"

@@ -5,7 +5,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.6.2
+  sdk: ^3.9.2
 
 dependencies:
   ai_slide_content:
@@ -17,8 +17,8 @@ dependencies:
   firebase_core: ^4.1.0
   flutter:
     sdk: flutter
-  flutter_deck: ^0.20.0
-  flutter_deck_web_client: ^0.3.1
+  flutter_deck: ^0.22.0
+  flutter_deck_web_client: ^0.4.0
   notes_app:
     path: packages/notes_app
   rfw_demo:

@@ -3,12 +3,12 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class NewYearSlide extends FlutterDeckSlideWidget {
   const NewYearSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/new-year',
-            title: 'New Year - new me',
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/new-year',
+          title: 'New Year - new me',
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

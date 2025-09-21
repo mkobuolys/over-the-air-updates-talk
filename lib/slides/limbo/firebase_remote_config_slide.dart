@@ -8,30 +8,21 @@ const _alignments = [
   Alignment.centerLeft,
   Alignment.bottomRight,
 ];
-const _colors = [
-  Color(0xFFE57373),
-  Color(0xFF81C784),
-  Color(0xFF9575CD),
-];
-const _fontSizes = [
-  54.0,
-  69.0,
-  58.0,
-  48.0,
-];
+const _colors = [Color(0xFFE57373), Color(0xFF81C784), Color(0xFF9575CD)];
+const _fontSizes = [54.0, 69.0, 58.0, 48.0];
 
 class FirebaseRemoteConfigSlide extends FlutterDeckSlideWidget {
   const FirebaseRemoteConfigSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/firebase-remote-config',
-            title: 'DEMO: Firebase Remote Config',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Configuration files - Firebase Remote Config',
-            ),
-            steps: 4,
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/firebase-remote-config',
+          title: 'DEMO: Firebase Remote Config',
+          header: FlutterDeckHeaderConfiguration(
+            title: 'Configuration files - Firebase Remote Config',
           ),
-        );
+          steps: 4,
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +33,7 @@ class FirebaseRemoteConfigSlide extends FlutterDeckSlideWidget {
 }
 
 class _SlideContent extends StatefulWidget {
-  const _SlideContent({
-    required this.colors,
-  });
+  const _SlideContent({required this.colors});
 
   final List<Color> colors;
 

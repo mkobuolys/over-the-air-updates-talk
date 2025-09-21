@@ -5,14 +5,12 @@ import '../../widgets/widgets.dart';
 
 class ThirdPartySolutionsSlide extends FlutterDeckSlideWidget {
   const ThirdPartySolutionsSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/third-party-solutions',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Third-party SDKs',
-            ),
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/third-party-solutions',
+          header: FlutterDeckHeaderConfiguration(title: 'Third-party SDKs'),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

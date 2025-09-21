@@ -3,12 +3,12 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class PresentationLinkSlide extends FlutterDeckSlideWidget {
   const PresentationLinkSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/presentation-link',
-            title: 'Presentation link',
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/presentation-link',
+          title: 'Presentation link',
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

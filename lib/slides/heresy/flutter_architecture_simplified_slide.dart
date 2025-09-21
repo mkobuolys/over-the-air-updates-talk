@@ -5,14 +5,14 @@ import '../../extensions/extensions.dart';
 
 class FlutterArchitectureSimplifiedSlide extends FlutterDeckSlideWidget {
   const FlutterArchitectureSimplifiedSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/flutter-architecture-simplified',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Flutter architecture - simplified',
-            ),
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/flutter-architecture-simplified',
+          header: FlutterDeckHeaderConfiguration(
+            title: 'Flutter architecture - simplified',
           ),
-        );
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

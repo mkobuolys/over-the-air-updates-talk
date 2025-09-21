@@ -3,12 +3,12 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class AppUpdateRejectedSlide extends FlutterDeckSlideWidget {
   const AppUpdateRejectedSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/app-update-rejected',
-            title: 'App update struggles',
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/app-update-rejected',
+          title: 'App update struggles',
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

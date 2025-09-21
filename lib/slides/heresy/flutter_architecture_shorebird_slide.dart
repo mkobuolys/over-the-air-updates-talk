@@ -5,14 +5,14 @@ import '../../extensions/extensions.dart';
 
 class FlutterArchitectureShorebirdSlide extends FlutterDeckSlideWidget {
   const FlutterArchitectureShorebirdSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/flutter-architecture-shorebird',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Flutter architecture - Shorebird',
-            ),
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/flutter-architecture-shorebird',
+          header: FlutterDeckHeaderConfiguration(
+            title: 'Flutter architecture - Shorebird',
           ),
-        );
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

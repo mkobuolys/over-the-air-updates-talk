@@ -3,12 +3,12 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class DanteInfernoSlide extends FlutterDeckSlideWidget {
   const DanteInfernoSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/dante-inferno',
-            title: '9 Circles of Hell',
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/dante-inferno',
+          title: '9 Circles of Hell',
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {

@@ -2,10 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 class LabeledImage extends StatelessWidget {
-  const LabeledImage({
-    required this.assetName,
-    required this.label,
-  });
+  const LabeledImage({required this.assetName, required this.label});
 
   final String assetName;
   final String label;

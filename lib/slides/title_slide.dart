@@ -3,13 +3,13 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class TitleSlide extends FlutterDeckSlideWidget {
   const TitleSlide({super.key})
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/title',
-            title: 'Intro',
-            footer: FlutterDeckFooterConfiguration(showFooter: false),
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/title',
+          title: 'Intro',
+          footer: FlutterDeckFooterConfiguration(showFooter: false),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,7 @@ class TitleSlide extends FlutterDeckSlideWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'From fear to air 🚀',
-              style: theme.titleTextStyle,
-            ),
+            Text('From fear to air 🚀', style: theme.titleTextStyle),
             Text(
               'Embracing over-the-air app updates',
               style: theme.subtitleTextStyle,

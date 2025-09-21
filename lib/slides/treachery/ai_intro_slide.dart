@@ -4,12 +4,12 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class AiIntroSlide extends FlutterDeckSlideWidget {
   const AiIntroSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/ai-intro',
-            title: 'AI',
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/ai-intro',
+          title: 'AI',
+        ),
+      );
 
   @override
   FlutterDeckSlide build(BuildContext context) {

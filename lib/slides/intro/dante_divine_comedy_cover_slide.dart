@@ -3,19 +3,18 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class DanteDivineComedyCoverSlide extends FlutterDeckSlideWidget {
   const DanteDivineComedyCoverSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/dante-divine-comedy-cover',
-            title: '"Divine Comedy" by Dante Alighieri',
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/dante-divine-comedy-cover',
+          title: '"Divine Comedy" by Dante Alighieri',
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
-      imageBuilder: (context) => Image.asset(
-        'assets/dante-divine-comedy-cover.png',
-      ),
+      imageBuilder: (context) =>
+          Image.asset('assets/dante-divine-comedy-cover.png'),
       label:
           'https://www.bailiwickexpress.com/opinion/opinion-five-life-lessons-dantes-afterworld/',
     );

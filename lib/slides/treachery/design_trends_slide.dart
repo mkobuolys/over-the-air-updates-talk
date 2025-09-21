@@ -5,21 +5,18 @@ import '../../extensions/extensions.dart';
 
 class DesignTrendsSlide extends FlutterDeckSlideWidget {
   const DesignTrendsSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/design-trends',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Design trends',
-            ),
-          ),
-        );
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/design-trends',
+          header: FlutterDeckHeaderConfiguration(title: 'Design trends'),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
-      imageBuilder: (context) => Image.asset(
-        context.getThemeAssetName('design-trends.png'),
-      ),
+      imageBuilder: (context) =>
+          Image.asset(context.getThemeAssetName('design-trends.png')),
     );
   }
 }

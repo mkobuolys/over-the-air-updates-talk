@@ -3,21 +3,23 @@ import 'package:flutter_deck/flutter_deck.dart';
 
 class CrowdinSlide extends FlutterDeckSlideWidget {
   const CrowdinSlide()
-      : super(
-          configuration: const FlutterDeckSlideConfiguration(
-            route: '/crowdin',
-            header: FlutterDeckHeaderConfiguration(
-              title: 'Localization - Crowdin',
-            ),
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/crowdin',
+          header: FlutterDeckHeaderConfiguration(
+            title: 'Localization - Crowdin',
           ),
-        );
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
     final ThemeData(
       :brightness,
-      colorScheme: ColorScheme(:surface, :onSurface)
-    ) = Theme.of(context);
+      colorScheme: ColorScheme(:surface, :onSurface),
+    ) = Theme.of(
+      context,
+    );
 
     return FlutterDeckSlide.blank(
       builder: (context) => Padding(
