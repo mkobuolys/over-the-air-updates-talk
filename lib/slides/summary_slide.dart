@@ -16,7 +16,13 @@ class SummarySlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.split(
-      leftBuilder: (context) => const Placeholder(),
+      leftBuilder: (context) => FlutterDeckBulletList(
+        items: const [
+          'Reuse your existing tools and libraries for OTA updates',
+          'Use CodePush and Server-Driven UI for NEW components and features',
+          'Leverage the power of GenAI to build dynamic user experiences',
+        ],
+      ),
       rightBuilder: (context) => const LabeledImage(
         assetName: 'assets/summary.png',
         label:

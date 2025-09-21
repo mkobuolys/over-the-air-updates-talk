@@ -9,7 +9,7 @@ class RemoteFlutterWidgetsOverviewSlide extends FlutterDeckSlideWidget {
         configuration: const FlutterDeckSlideConfiguration(
           route: '/remote-flutter-widgets-overview',
           header: FlutterDeckHeaderConfiguration(
-            title: 'Remote Flutter Widgets - overview',
+            title: 'Server-Driven UI - rfw',
           ),
         ),
       );
