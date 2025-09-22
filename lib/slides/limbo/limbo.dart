@@ -1,4 +1,3 @@
-import 'ab_testing_slide.dart';
 import 'crowdin_slide.dart';
 import 'feature_flags_overview_slide.dart';
 import 'feature_flags_slide.dart';
@@ -24,6 +23,5 @@ const limboSlides = [
   FirebaseRemoteConfigSlide(),
   FeatureFlagsOverviewSlide(),
   FeatureFlagsSlide(),
-  AbTestingSlide(),
   PersonalizedConfigSlide(),
 ];

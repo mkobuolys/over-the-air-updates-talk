@@ -12,7 +12,7 @@ class PersonalizedConfigSlide extends FlutterDeckSlideWidget {
           route: '/personalized-config',
           title: 'DEMO: Personalized configuration',
           header: FlutterDeckHeaderConfiguration(
-            title: 'Personalized configuration',
+            title: 'Personalized configuration - smart A/B testing',
           ),
         ),
       );
