@@ -23,12 +23,12 @@ class TravelAppDemoSlide extends FlutterDeckSlideWidget {
         spacing: 64.0,
         children: [
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Image.asset(
               context.getThemeAssetName('flutter_genui_architecture.png'),
             ),
           ),
-          const Expanded(flex: 2, child: TravelApp()),
+          const Expanded(child: TravelApp()),
         ],
       ),
     );
