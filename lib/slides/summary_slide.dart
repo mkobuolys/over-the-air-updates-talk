@@ -25,8 +25,7 @@ class SummarySlide extends FlutterDeckSlideWidget {
       ),
       rightBuilder: (context) => const LabeledImage(
         assetName: 'assets/summary.png',
-        label:
-            'Image generated using Picsart from the prompt "Summary, Etching, Gustave Doré"',
+        label: 'Image generated using Picsart from the prompt "Summary, Etching, Gustave Doré"',
       ),
     );
   }

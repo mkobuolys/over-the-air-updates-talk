@@ -9,9 +9,7 @@ class FlutterGenuiArchitectureSlide extends FlutterDeckSlideWidget {
         configuration: const FlutterDeckSlideConfiguration(
           route: '/flutter-genui-architecture',
           title: 'flutter_genui architecture',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'flutter_genui - architecture',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'flutter_genui - architecture'),
           hidden: true,
         ),
       );
@@ -19,9 +17,7 @@ class FlutterGenuiArchitectureSlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
-      imageBuilder: (context) => Image.asset(
-        context.getThemeAssetName('flutter_genui_architecture.png'),
-      ),
+      imageBuilder: (context) => Image.asset(context.getThemeAssetName('flutter_genui_architecture.png')),
     );
   }
 }

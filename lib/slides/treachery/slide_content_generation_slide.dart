@@ -96,12 +96,7 @@ class _ContentState extends State<_Content> {
             textStyle: FlutterDeckTheme.of(context).textTheme.bodyLarge,
           ),
         ),
-        actions: [
-          TextButton(
-            onPressed: Navigator.of(context).pop,
-            child: const Text('Close'),
-          ),
-        ],
+        actions: [TextButton(onPressed: Navigator.of(context).pop, child: const Text('Close'))],
       ),
     );
   }
@@ -140,9 +135,7 @@ class _ContentState extends State<_Content> {
                     padding: const EdgeInsets.symmetric(horizontal: 32.0),
                     child: _useFakeMode
                         ? Text(
-                            _controller.text.isNotEmpty
-                                ? _controller.text
-                                : hintText,
+                            _controller.text.isNotEmpty ? _controller.text : hintText,
                             style: const TextStyle(fontSize: 36.0),
                           )
                         : TextField(
@@ -158,12 +151,8 @@ class _ContentState extends State<_Content> {
                   ),
                 ),
                 IconButton(
-                  style: IconButton.styleFrom(
-                    foregroundColor: colorScheme.primary,
-                  ),
-                  onPressed: _generatedCode.isNotEmpty
-                      ? _showGeneratedCode
-                      : null,
+                  style: IconButton.styleFrom(foregroundColor: colorScheme.primary),
+                  onPressed: _generatedCode.isNotEmpty ? _showGeneratedCode : null,
                   icon: const Icon(Icons.code, size: 36.0),
                 ),
                 const SizedBox(width: 16.0),
@@ -172,22 +161,13 @@ class _ContentState extends State<_Content> {
                     backgroundColor: colorScheme.primary,
                     iconColor: colorScheme.onPrimary,
                     iconSize: 36.0,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 16.0,
-                      horizontal: 32.0,
-                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
                   ),
                   onPressed: _onGenerate,
                   child: Row(
                     spacing: 8.0,
                     children: [
-                      Text(
-                        'Generate',
-                        style: TextStyle(
-                          color: colorScheme.onPrimary,
-                          fontSize: 36.0,
-                        ),
-                      ),
+                      Text('Generate', style: TextStyle(color: colorScheme.onPrimary, fontSize: 36.0)),
                       const Icon(Icons.rocket_launch),
                     ],
                   ),

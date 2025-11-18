@@ -8,12 +8,7 @@ import 'remote_flutter_widgets_overview_slide.dart';
 import 'shorebird_slide.dart';
 import 'web_view_slide.dart';
 
-const heresySlidesShort = [
-  HeresySectionSlide(),
-  WebViewSlide(),
-  RemoteFlutterWidgetsDemoSlide(),
-  CodePushSlide(),
-];
+const heresySlidesShort = [HeresySectionSlide(), WebViewSlide(), RemoteFlutterWidgetsDemoSlide(), CodePushSlide()];
 
 const heresySlides = [
   HeresySectionSlide(),

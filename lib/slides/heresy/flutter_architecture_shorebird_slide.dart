@@ -8,18 +8,14 @@ class FlutterArchitectureShorebirdSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/flutter-architecture-shorebird',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Flutter architecture - Shorebird',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Flutter architecture - Shorebird'),
         ),
       );
 
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
-      imageBuilder: (context) => Image.asset(
-        context.getThemeAssetName('flutter-architecture-shorebird.png'),
-      ),
+      imageBuilder: (context) => Image.asset(context.getThemeAssetName('flutter-architecture-shorebird.png')),
     );
   }
 }

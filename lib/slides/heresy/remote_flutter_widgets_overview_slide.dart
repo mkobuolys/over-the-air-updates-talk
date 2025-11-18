@@ -8,17 +8,14 @@ class RemoteFlutterWidgetsOverviewSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/remote-flutter-widgets-overview',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Server-Driven UI - rfw',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Server-Driven UI - rfw'),
         ),
       );
 
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
-      imageBuilder: (context) =>
-          Image.asset(context.getThemeAssetName('rfw-architecture.png')),
+      imageBuilder: (context) => Image.asset(context.getThemeAssetName('rfw-architecture.png')),
     );
   }
 }

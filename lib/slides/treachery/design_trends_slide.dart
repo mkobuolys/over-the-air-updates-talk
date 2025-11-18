@@ -15,8 +15,7 @@ class DesignTrendsSlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
-      imageBuilder: (context) =>
-          Image.asset(context.getThemeAssetName('design-trends.png')),
+      imageBuilder: (context) => Image.asset(context.getThemeAssetName('design-trends.png')),
     );
   }
 }

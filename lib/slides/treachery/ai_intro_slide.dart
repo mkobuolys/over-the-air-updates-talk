@@ -5,10 +5,7 @@ import 'package:flutter_deck/flutter_deck.dart';
 class AiIntroSlide extends FlutterDeckSlideWidget {
   const AiIntroSlide()
     : super(
-        configuration: const FlutterDeckSlideConfiguration(
-          route: '/ai-intro',
-          title: 'AI',
-        ),
+        configuration: const FlutterDeckSlideConfiguration(route: '/ai-intro', title: 'AI'),
       );
 
   @override
@@ -61,10 +58,7 @@ class _ContentState extends State<_Content> {
             maxBlastForce: 50,
             confettiController: _controller,
           ),
-          Text(
-            'AI',
-            style: FlutterDeckBigFactSlideTheme.of(context).titleTextStyle,
-          ),
+          Text('AI', style: FlutterDeckBigFactSlideTheme.of(context).titleTextStyle),
         ],
       ),
     );

@@ -19,14 +19,8 @@ class WebViewSlide extends FlutterDeckSlideWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         spacing: 64,
         children: [
-          LabeledImage(
-            assetName: 'assets/webview-demo.png',
-            label: 'webview_flutter plugin demo',
-          ),
-          LabeledImage(
-            assetName: 'assets/notion.png',
-            label: 'Notion mobile app',
-          ),
+          LabeledImage(assetName: 'assets/webview-demo.png', label: 'webview_flutter plugin demo'),
+          LabeledImage(assetName: 'assets/notion.png', label: 'Notion mobile app'),
         ],
       ),
     );

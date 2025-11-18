@@ -15,10 +15,7 @@ abstract final class PresentationTheme {
 
   static final lightTheme =
       FlutterDeckThemeData.fromTheme(
-        ThemeData.from(
-          colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
-          useMaterial3: true,
-        ),
+        ThemeData.from(colorScheme: ColorScheme.fromSeed(seedColor: primaryColor), useMaterial3: true),
       ).copyWith(
         bigFactSlideTheme: _bigFactSlideTheme,
         quoteSlideTheme: _quoteSlideTheme,
@@ -28,11 +25,7 @@ abstract final class PresentationTheme {
 
   static const _bigFactSlideTheme = FlutterDeckBigFactSlideThemeData(
     titleTextStyle: TextStyle(fontSize: 128, fontWeight: FontWeight.bold),
-    subtitleTextStyle: TextStyle(
-      fontSize: 64,
-      fontWeight: FontWeight.w500,
-      height: 1,
-    ),
+    subtitleTextStyle: TextStyle(fontSize: 64, fontWeight: FontWeight.w500, height: 1),
   );
 
   static const _quoteSlideTheme = FlutterDeckQuoteSlideThemeData(

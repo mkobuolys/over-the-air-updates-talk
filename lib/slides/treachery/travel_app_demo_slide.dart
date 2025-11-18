@@ -10,9 +10,7 @@ class TravelAppDemoSlide extends FlutterDeckSlideWidget {
         configuration: const FlutterDeckSlideConfiguration(
           route: '/travel-app-demo',
           title: 'DEMO: AI Travel Agent',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Generative UI - AI Travel Agent',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Generative UI - AI Travel Agent'),
         ),
       );
 
@@ -22,12 +20,7 @@ class TravelAppDemoSlide extends FlutterDeckSlideWidget {
       builder: (context) => Row(
         spacing: 64.0,
         children: [
-          Expanded(
-            flex: 2,
-            child: Image.asset(
-              context.getThemeAssetName('flutter_genui_architecture.png'),
-            ),
-          ),
+          Expanded(flex: 2, child: Image.asset(context.getThemeAssetName('flutter_genui_architecture.png'))),
           const Expanded(child: TravelApp()),
         ],
       ),

@@ -6,9 +6,7 @@ class FeatureFlagsOverviewSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/feature-flags-overview',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Feature flags - OTA updates?',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Feature flags - OTA updates?'),
         ),
       );
 
@@ -17,8 +15,7 @@ class FeatureFlagsOverviewSlide extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset(
         'assets/feature-flags.png',
-        frameBuilder: (context, child, _, _) =>
-            Transform.scale(scale: 1.5, child: child),
+        frameBuilder: (context, child, _, _) => Transform.scale(scale: 1.5, child: child),
       ),
       label: 'https://semaphoreci.com/blog/feature-flags',
     );

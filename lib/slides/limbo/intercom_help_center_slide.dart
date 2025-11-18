@@ -6,16 +6,12 @@ class IntercomHelpCenterSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/intercom-help-center',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Customer support help center - Intercom',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Customer support help center - Intercom'),
         ),
       );
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.image(
-      imageBuilder: (context) => Image.asset('assets/intercom.png'),
-    );
+    return FlutterDeckSlide.image(imageBuilder: (context) => Image.asset('assets/intercom.png'));
   }
 }

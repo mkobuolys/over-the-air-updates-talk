@@ -6,9 +6,7 @@ class RevenueCatPaywallSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/revenue-cat-paywall',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Paywall editor - RevenueCat',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Paywall editor - RevenueCat'),
         ),
       );
 

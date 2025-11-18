@@ -16,8 +16,7 @@ class GenerativeUiOverviewSlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
-      imageBuilder: (context) =>
-          Image.asset(context.getThemeAssetName('generative-ui-overview.png')),
+      imageBuilder: (context) => Image.asset(context.getThemeAssetName('generative-ui-overview.png')),
     );
   }
 }

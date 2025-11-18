@@ -4,10 +4,7 @@ import 'package:flutter_deck/flutter_deck.dart';
 class LimboSectionSlide extends FlutterDeckSlideWidget {
   const LimboSectionSlide()
     : super(
-        configuration: const FlutterDeckSlideConfiguration(
-          route: '/limbo-section',
-          title: 'Level 1: Limbo',
-        ),
+        configuration: const FlutterDeckSlideConfiguration(route: '/limbo-section', title: 'Level 1: Limbo'),
       );
 
   @override

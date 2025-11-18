@@ -21,10 +21,7 @@ class FeatureFlagsSlide extends FlutterDeckSlideWidget {
       builder: (context) => Row(
         spacing: 64.0,
         children: [
-          Expanded(
-            flex: 3,
-            child: Image.asset(context.getThemeAssetName('feature-flag.png')),
-          ),
+          Expanded(flex: 3, child: Image.asset(context.getThemeAssetName('feature-flag.png'))),
           const Expanded(flex: 2, child: _NotesApp()),
         ],
       ),
@@ -65,10 +62,7 @@ class _NotesAppState extends State<_NotesApp> {
               height: 75,
               child: FittedBox(
                 fit: BoxFit.fill,
-                child: Switch.adaptive(
-                  value: _featureFlagEnabled,
-                  onChanged: _toggleFeatureFlag,
-                ),
+                child: Switch.adaptive(value: _featureFlagEnabled, onChanged: _toggleFeatureFlag),
               ),
             ),
             Text(

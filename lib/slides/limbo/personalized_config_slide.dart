@@ -11,9 +11,7 @@ class PersonalizedConfigSlide extends FlutterDeckSlideWidget {
         configuration: const FlutterDeckSlideConfiguration(
           route: '/personalized-config',
           title: 'DEMO: Personalized configuration',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Personalized configuration - smart A/B testing',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Personalized configuration - smart A/B testing'),
         ),
       );
 
@@ -23,12 +21,7 @@ class PersonalizedConfigSlide extends FlutterDeckSlideWidget {
       builder: (context) => Row(
         spacing: 64.0,
         children: [
-          Expanded(
-            flex: 3,
-            child: Image.asset(
-              context.getThemeAssetName('personalized-config.png'),
-            ),
-          ),
+          Expanded(flex: 3, child: Image.asset(context.getThemeAssetName('personalized-config.png'))),
           const Expanded(flex: 2, child: _NotesApp()),
         ],
       ),
@@ -66,10 +59,7 @@ class _NotesAppState extends State<_NotesApp> {
           mainAxisSize: MainAxisSize.min,
           spacing: 16.0,
           children: [
-            Text(
-              'App spend: \$${_value.toStringAsFixed(2)}',
-              style: Theme.of(context).textTheme.displayMedium,
-            ),
+            Text('App spend: \$${_value.toStringAsFixed(2)}', style: Theme.of(context).textTheme.displayMedium),
           ],
         ),
       ],

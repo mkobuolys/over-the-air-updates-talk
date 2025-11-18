@@ -86,9 +86,7 @@ class RemoteFlutterWidgetsDemoSlide extends FlutterDeckSlideWidget {
         configuration: const FlutterDeckSlideConfiguration(
           route: '/remote-flutter-widgets-demo',
           title: 'DEMO: Remote Flutter Widgets (rfw)',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Remote Flutter Widgets - configuration',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Remote Flutter Widgets - configuration'),
         ),
       );
 
@@ -129,10 +127,7 @@ class _SlideContentState extends State<_SlideContent> {
         Center(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(
-                vertical: 16.0,
-                horizontal: 32.0,
-              ),
+              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
               textStyle: const TextStyle(fontSize: 36),
             ),
             onPressed: !_updated ? _updateApp : null,

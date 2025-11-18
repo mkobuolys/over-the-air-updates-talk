@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 const _duration = Duration(milliseconds: 500);
-const _alignments = [
-  Alignment.center,
-  Alignment.topRight,
-  Alignment.centerLeft,
-  Alignment.bottomRight,
-];
+const _alignments = [Alignment.center, Alignment.topRight, Alignment.centerLeft, Alignment.bottomRight];
 const _colors = [Color(0xFFE57373), Color(0xFF81C784), Color(0xFF9575CD)];
 const _fontSizes = [54.0, 69.0, 58.0, 48.0];
 
@@ -17,18 +12,14 @@ class FirebaseRemoteConfigSlide extends FlutterDeckSlideWidget {
         configuration: const FlutterDeckSlideConfiguration(
           route: '/firebase-remote-config',
           title: 'DEMO: Firebase Remote Config',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'Configuration files - Firebase Remote Config',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'Configuration files - Firebase Remote Config'),
           steps: 4,
         ),
       );
 
   @override
   Widget build(BuildContext context) {
-    return _SlideContent(
-      colors: [Theme.of(context).scaffoldBackgroundColor, ..._colors],
-    );
+    return _SlideContent(colors: [Theme.of(context).scaffoldBackgroundColor, ..._colors]);
   }
 }
 
@@ -65,10 +56,7 @@ class _SlideContentState extends State<_SlideContent> {
     return FlutterDeckSlideStepsListener(
       listener: (context, step) => _updateConfiguration(step - 1),
       child: FlutterDeckSlide.blank(
-        backgroundBuilder: (context) => AnimatedContainer(
-          duration: _duration,
-          color: _configuration.backgroundColor,
-        ),
+        backgroundBuilder: (context) => AnimatedContainer(duration: _duration, color: _configuration.backgroundColor),
         builder: (context) => Stack(
           children: [
             AnimatedAlign(
@@ -148,9 +136,5 @@ extension AlignmentX on Alignment {
 }
 
 extension ColorX on Color {
-  String get hex => [r, g, b]
-      .map(
-        (c) => ((c * 255.0).round() & 0xff).toRadixString(16).padLeft(2, '0'),
-      )
-      .join();
+  String get hex => [r, g, b].map((c) => ((c * 255.0).round() & 0xff).toRadixString(16).padLeft(2, '0')).join();
 }

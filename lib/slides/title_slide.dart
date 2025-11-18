@@ -22,14 +22,9 @@ class TitleSlide extends FlutterDeckSlideWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('From fear to air 🚀', style: theme.titleTextStyle),
-            Text(
-              'Embracing over-the-air app updates',
-              style: theme.subtitleTextStyle,
-            ),
+            Text('Embracing over-the-air app updates', style: theme.subtitleTextStyle),
             const SizedBox(height: 64),
-            FlutterDeckSpeakerInfoWidget(
-              speakerInfo: context.flutterDeck.speakerInfo!,
-            ),
+            FlutterDeckSpeakerInfoWidget(speakerInfo: context.flutterDeck.speakerInfo!),
           ],
         ),
       ),

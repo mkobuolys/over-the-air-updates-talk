@@ -19,16 +19,12 @@ class ThirdPartySolutionsSlide extends FlutterDeckSlideWidget {
         spacing: 16,
         children: [
           Expanded(
-            child: LabeledImage(
-              assetName: 'assets/intercom.png',
-              label: 'Intercom - Billo Help Center',
-            ),
+            child: LabeledImage(assetName: 'assets/intercom.png', label: 'Intercom - Billo Help Center'),
           ),
           Expanded(
             child: LabeledImage(
               assetName: 'assets/revenue-cat-paywall.png',
-              label:
-                  'https://www.revenuecat.com/blog/growth/revenuecat-paywalls-v2',
+              label: 'https://www.revenuecat.com/blog/growth/revenuecat-paywalls-v2',
             ),
           ),
         ],

@@ -8,12 +8,7 @@ import 'personalized_config_slide.dart';
 import 'revenue_cat_paywall_slide.dart';
 import 'third_party_solutions_slide.dart';
 
-const limboSlidesShort = [
-  LimboSectionSlide(),
-  CrowdinSlide(),
-  ThirdPartySolutionsSlide(),
-  FirebaseRemoteConfigSlide(),
-];
+const limboSlidesShort = [LimboSectionSlide(), CrowdinSlide(), ThirdPartySolutionsSlide(), FirebaseRemoteConfigSlide()];
 
 const limboSlides = [
   LimboSectionSlide(),

@@ -7,16 +7,12 @@ class CodePushRelevanceSlide extends FlutterDeckSlideWidget {
         configuration: const FlutterDeckSlideConfiguration(
           route: '/code-push-relevance',
           title: 'CodePush - relevance',
-          header: FlutterDeckHeaderConfiguration(
-            title: 'CodePush - #1 requested feature for Flutter',
-          ),
+          header: FlutterDeckHeaderConfiguration(title: 'CodePush - #1 requested feature for Flutter'),
         ),
       );
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.image(
-      imageBuilder: (context) => Image.asset('assets/code-push-relevance.png'),
-    );
+    return FlutterDeckSlide.image(imageBuilder: (context) => Image.asset('assets/code-push-relevance.png'));
   }
 }

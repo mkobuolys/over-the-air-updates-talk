@@ -30,24 +30,13 @@ class _FlutterDeckApp extends StatelessWidget {
 
     return FlutterDeckApp(
       configuration: FlutterDeckConfiguration(
-        footer: const FlutterDeckFooterConfiguration(
-          showSlideNumbers: true,
-          showSocialHandle: true,
-        ),
-        slideSize: FlutterDeckSlideSize.fromAspectRatio(
-          aspectRatio: const FlutterDeckAspectRatio.ratio16x10(),
-        ),
+        footer: const FlutterDeckFooterConfiguration(showSlideNumbers: true, showSocialHandle: true),
+        slideSize: FlutterDeckSlideSize.fromAspectRatio(aspectRatio: const FlutterDeckAspectRatio.ratio16x10()),
         transition: const FlutterDeckTransition.fade(),
         controls: const FlutterDeckControlsConfiguration(
           shortcuts: FlutterDeckShortcutsConfiguration(
-            toggleMarker: SingleActivator(
-              LogicalKeyboardKey.keyM,
-              control: true,
-            ),
-            toggleNavigationDrawer: SingleActivator(
-              LogicalKeyboardKey.period,
-              control: true,
-            ),
+            toggleMarker: SingleActivator(LogicalKeyboardKey.keyM, control: true),
+            toggleNavigationDrawer: SingleActivator(LogicalKeyboardKey.period, control: true),
           ),
         ),
       ),

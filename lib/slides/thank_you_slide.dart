@@ -23,9 +23,7 @@ class ThankYouSlide extends FlutterDeckSlideWidget {
           children: [
             Text('Thank you! 🫡', style: theme.titleTextStyle),
             const SizedBox(height: 48),
-            FlutterDeckSpeakerInfoWidget(
-              speakerInfo: context.flutterDeck.speakerInfo!,
-            ),
+            FlutterDeckSpeakerInfoWidget(speakerInfo: context.flutterDeck.speakerInfo!),
           ],
         ),
       ),

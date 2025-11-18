@@ -14,10 +14,7 @@ class LabeledImage extends StatelessWidget {
       spacing: 8,
       children: [
         Expanded(child: Image.asset(assetName)),
-        Text(
-          label,
-          style: FlutterDeckImageSlideTheme.of(context).labelTextStyle,
-        ),
+        Text(label, style: FlutterDeckImageSlideTheme.of(context).labelTextStyle),
       ],
     );
   }
