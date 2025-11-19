@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-import '../../helpers/helpers.dart';
+import '../../../helpers/helpers.dart';
 
-class BonusStorySlide extends FlutterDeckSlideWidget {
-  const BonusStorySlide()
+class BonusStorySectionSlide extends FlutterDeckSlideWidget {
+  const BonusStorySectionSlide()
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/bonus-story',

@@ -1,0 +1,70 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_deck/flutter_deck.dart';
+
+const _steps = [
+  'Submit app for review',
+  'Hide name fields feature toggle: ON',
+  'Wait for review',
+  'App approved!',
+  'Hide name fields feature toggle: OFF',
+];
+
+class SignUpFormToggleSlide extends FlutterDeckSlideWidget {
+  const SignUpFormToggleSlide({super.key})
+    : super(
+        configuration: const FlutterDeckSlideConfiguration(
+          route: '/sign-up-form-toggle',
+          title: 'DEMO: "Toggling" app review',
+          steps: 5,
+        ),
+      );
+
+  @override
+  FlutterDeckSlide build(BuildContext context) {
+    return FlutterDeckSlide.blank(
+      builder: (context) => FlutterDeckSlideStepsListener(
+        listener: (context, step) => step == 4
+            ? showDialog(
+                context: context,
+                builder: (context) => Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(32),
+                    child: Image.asset('assets/submission-successful.png'),
+                  ),
+                ),
+              )
+            : Navigator.maybePop(context),
+        child: FlutterDeckSlideStepsBuilder(
+          builder: (context, step) => Stack(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Image.asset(
+                      step > 1 && step < 5 ? 'assets/sign-up-no-name.png' : 'assets/sign-up-name-empty.png',
+                    ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        for (final (index, item) in _steps.indexed)
+                          Opacity(
+                            opacity: step >= index + 1 ? 1 : 0,
+                            child: Text('${index + 1}. $item', style: FlutterDeckTheme.of(context).textTheme.title),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
