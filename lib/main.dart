@@ -24,10 +24,6 @@ class _FlutterDeckApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const contentSlides = bool.fromEnvironment('USE_SHORT_VERSION')
-        ? [...limboSlidesShort, ...heresySlidesShort, ...treacherySlidesShort]
-        : [...limboSlides, ...heresySlides, ...treacherySlides];
-
     return FlutterDeckApp(
       configuration: FlutterDeckConfiguration(
         footer: const FlutterDeckFooterConfiguration(showSlideNumbers: true, showSocialHandle: true),
@@ -43,7 +39,9 @@ class _FlutterDeckApp extends StatelessWidget {
       slides: const [
         TitleSlide(),
         ...introSlides,
-        ...contentSlides,
+        ...limboSlides,
+        ...heresySlides,
+        ...treacherySlides,
         SummarySlide(),
         PresentationLinkSlide(),
         ThankYouSlide(),
