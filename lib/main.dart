@@ -39,9 +39,9 @@ class _FlutterDeckApp extends StatelessWidget {
       slides: const [
         TitleSlide(),
         ...introSlides,
-        ...limboSlides,
-        ...heresySlides,
-        ...treacherySlides,
+        ...configurationSlides,
+        ...uiSlides,
+        ...createUiSlides,
         SummarySlide(),
         PresentationLinkSlide(),
         ThankYouSlide(),
