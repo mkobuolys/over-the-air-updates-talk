@@ -13,7 +13,7 @@ class AnotherWrappedSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset('assets/cat-annoyed.png'),
-      label: getPicsartPromptLabel("Cat using mobile app, eye-rolling, annoyed, 'ugh, another wrapped'"),
+      label: getPicsartPromptLabel("Cat using mobile app, Eye-rolling, Annoyed, 'Ugh, another wrapped'"),
     );
   }
 }

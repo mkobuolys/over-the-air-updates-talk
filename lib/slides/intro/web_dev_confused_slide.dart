@@ -16,7 +16,7 @@ class WebDevConfusedSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset('assets/web-dev-confused.png'),
-      label: getPicsartPromptLabel('Cat web dev, confused, question mark'),
+      label: getPicsartPromptLabel('Cat web dev, Confused, Question mark'),
     );
   }
 }

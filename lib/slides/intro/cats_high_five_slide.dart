@@ -13,7 +13,7 @@ class CatsHighFiveSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset('assets/cats-high-five.png'),
-      label: getPicsartPromptLabel('Cats high-fiving each other, developers, success'),
+      label: getPicsartPromptLabel('Cats high-fiving each other, Developers, Success'),
     );
   }
 }

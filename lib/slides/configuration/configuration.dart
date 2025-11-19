@@ -1,3 +1,4 @@
+import 'bonus_story_slide.dart';
 import 'configuration_section_slide.dart';
 import 'crowdin_slide.dart';
 import 'firebase_remote_config_slide.dart';
@@ -10,4 +11,5 @@ const configurationSlides = [
   IntercomHelpCenterSlide(),
   RevenueCatPaywallSlide(),
   FirebaseRemoteConfigSlide(),
+  BonusStorySlide(),
 ];

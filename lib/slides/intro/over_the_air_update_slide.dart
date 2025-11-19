@@ -16,7 +16,7 @@ class OverTheAirUpdateSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset('assets/over-the-air-update.png'),
-      label: getPicsartPromptLabel('Mobile app, over-the-air update'),
+      label: getPicsartPromptLabel('Mobile app, Over-the-air update'),
     );
   }
 }

@@ -16,7 +16,7 @@ class AppUpdatePendingSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset('assets/app-update-pending.png'),
-      label: getPicsartPromptLabel('Cat scared, app update is still pending'),
+      label: getPicsartPromptLabel('Cat scared, App update is still pending'),
     );
   }
 }

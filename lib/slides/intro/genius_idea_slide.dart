@@ -13,7 +13,7 @@ class GeniusIdeaSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.image(
       imageBuilder: (context) => Image.asset('assets/cat-product-manager.png'),
-      label: getPicsartPromptLabel('Cat product manager having a genius idea, light bulb'),
+      label: getPicsartPromptLabel('Cat product manager having a genius idea, Light bulb'),
     );
   }
 }
