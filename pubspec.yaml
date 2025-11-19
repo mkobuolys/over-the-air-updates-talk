@@ -19,8 +19,6 @@ dependencies:
     sdk: flutter
   flutter_deck: ^0.22.0
   flutter_deck_web_client: ^0.4.0
-  notes_app:
-    path: packages/notes_app
   rfw_demo:
     path: packages/rfw_demo
   travel_app:
