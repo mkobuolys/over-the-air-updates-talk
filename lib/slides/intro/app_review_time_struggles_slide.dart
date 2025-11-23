@@ -12,6 +12,6 @@ class AppReviewTimeStrugglesSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.image(imageBuilder: (context) => Image.asset('assets/slow-app-review.png'));
+    return FlutterDeckSlide.image(imageBuilder: (context) => Image.asset('assets/slow-app-review.png', scale: 0.5));
   }
 }

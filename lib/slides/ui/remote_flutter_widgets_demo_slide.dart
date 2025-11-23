@@ -86,7 +86,7 @@ class RemoteFlutterWidgetsDemoSlide extends FlutterDeckSlideWidget {
         configuration: const FlutterDeckSlideConfiguration(
           route: '/remote-flutter-widgets-demo',
           title: 'DEMO: Remote Flutter Widgets (rfw)',
-          header: FlutterDeckHeaderConfiguration(title: 'Remote Flutter Widgets - configuration'),
+          header: FlutterDeckHeaderConfiguration(title: 'SDUI - Remote Flutter Widgets (rfw)'),
         ),
       );
 

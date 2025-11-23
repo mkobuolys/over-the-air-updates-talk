@@ -6,7 +6,7 @@ class ServerDrivenUiSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/server-driven-ui',
-          header: FlutterDeckHeaderConfiguration(title: 'Server-Driven UI'),
+          header: FlutterDeckHeaderConfiguration(title: 'Server-Driven UI (SDUI)'),
         ),
       );
 
