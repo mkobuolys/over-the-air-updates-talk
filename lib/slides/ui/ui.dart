@@ -2,6 +2,7 @@ import 'code_push_architecture_slide.dart';
 import 'code_push_providers_slide.dart';
 import 'code_push_slide.dart';
 import 'code_push_update_process_slide.dart';
+import 'code_vs_definition_slide.dart';
 import 'cross_platform_architecture_slide.dart';
 import 'remote_flutter_widgets_demo_slide.dart';
 import 'server_driven_ui_architecture_slide.dart';
@@ -21,5 +22,6 @@ const uiSlides = [
   ServerDrivenUiSlide(),
   TraditionalVsServerDrivenUiSlide(),
   ServerDrivenUiArchitectureSlide(),
+  CodeVsDefinitionSlide(),
   RemoteFlutterWidgetsDemoSlide(),
 ];

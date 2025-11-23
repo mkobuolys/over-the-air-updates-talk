@@ -31,7 +31,7 @@ const _simpleCounterCode = '''
     floatingActionButton: FloatingActionButton(
       backgroundColor: 0xffebddff,
       onPressed: event "updateCounter" { increment: 1 },
-      child: Icon(icon: 0xe047, fontFamily: 'MaterialIcons'),
+      child: Icon(icon: 0xe047, fontFamily: "MaterialIcons"),
     ),
   );
 ''';
@@ -64,13 +64,13 @@ const _improvedCounterCode = '''
               FloatingActionButton(
                 backgroundColor: 0xffebddff,
                 onPressed: event "updateCounter" { increment: -1 },
-                child: Icon(icon: 0xe516, fontFamily: 'MaterialIcons'),
+                child: Icon(icon: 0xe516, fontFamily: "MaterialIcons"),
               ),
               SizedBox(width: 16.0),
               FloatingActionButton(
                 backgroundColor: 0xffebddff,
                 onPressed: event "updateCounter" { increment: 1 },
-                child: Icon(icon: 0xe047, fontFamily: 'MaterialIcons'),
+                child: Icon(icon: 0xe047, fontFamily: "MaterialIcons"),
               ),
             ],
           ),
