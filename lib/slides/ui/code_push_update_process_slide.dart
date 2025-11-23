@@ -6,7 +6,7 @@ class CodePushUpdateProcessSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/code-push-update-process',
-          header: FlutterDeckHeaderConfiguration(title: 'CodePush - how it works'),
+          header: FlutterDeckHeaderConfiguration(title: 'CodePush - Update process'),
         ),
       );
 

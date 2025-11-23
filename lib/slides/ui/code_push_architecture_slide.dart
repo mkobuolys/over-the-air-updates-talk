@@ -8,7 +8,7 @@ class CodePushArchitectureSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/code-push-architecture',
-          header: FlutterDeckHeaderConfiguration(title: 'Cross-platform architecture: CodePush'),
+          header: FlutterDeckHeaderConfiguration(title: 'Cross-platform architecture - CodePush'),
         ),
       );
 

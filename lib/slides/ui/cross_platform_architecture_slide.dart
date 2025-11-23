@@ -8,7 +8,7 @@ class CrossPlatformArchitectureSlide extends FlutterDeckSlideWidget {
     : super(
         configuration: const FlutterDeckSlideConfiguration(
           route: '/cross-platform-architecture',
-          header: FlutterDeckHeaderConfiguration(title: 'Cross-platform architecture: simplified'),
+          header: FlutterDeckHeaderConfiguration(title: 'Cross-platform architecture - Simplified'),
         ),
       );
 
