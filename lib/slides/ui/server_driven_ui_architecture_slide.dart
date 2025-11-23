@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
+import '../../extensions/extensions.dart';
+
 class ServerDrivenUiArchitectureSlide extends FlutterDeckSlideWidget {
   const ServerDrivenUiArchitectureSlide()
     : super(
@@ -12,6 +14,8 @@ class ServerDrivenUiArchitectureSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.image(imageBuilder: (context) => Image.asset('assets/'), label: '');
+    return FlutterDeckSlide.image(
+      imageBuilder: (context) => Image.asset(context.getThemeAssetName('server-driven-ui-architecture.png')),
+    );
   }
 }
