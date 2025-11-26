@@ -21,8 +21,8 @@ dependencies:
   flutter_deck_web_client: ^0.4.0
   rfw_demo:
     path: packages/rfw_demo
-  travel_app_old:
-    path: packages/travel_app_old
+  travel_app:
+    path: packages/travel_app
 
 dev_dependencies:
   flutter_test:

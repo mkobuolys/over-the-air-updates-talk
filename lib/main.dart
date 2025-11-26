@@ -12,8 +12,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await FirebaseAppCheck.instance.activate(
-    appleProvider: AppleProvider.debug,
-    webProvider: ReCaptchaV3Provider('debug'),
+    providerApple: const AppleDebugProvider(),
+    providerWeb: ReCaptchaV3Provider('debug'),
   );
 
   runApp(const _FlutterDeckApp());
