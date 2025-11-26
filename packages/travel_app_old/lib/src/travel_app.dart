@@ -13,12 +13,12 @@ import 'travel_planner_page.dart';
 /// This widget sets up the [MaterialApp], which configures the overall theme,
 /// title, and home page for the app. It serves as the main entry point for the
 /// user interface.
-class TravelApp extends StatelessWidget {
-  /// Creates a new [TravelApp].
+class TravelAppOld extends StatelessWidget {
+  /// Creates a new [TravelAppOld].
   ///
   /// The optional [aiClient] can be used to inject a specific AI client,
   /// which is useful for testing with a mock implementation.
-  const TravelApp({this.aiClient, super.key});
+  const TravelAppOld({this.aiClient, super.key});
 
   final AiClient? aiClient;
 

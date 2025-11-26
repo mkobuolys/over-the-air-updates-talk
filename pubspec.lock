@@ -685,10 +685,10 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.6"
-  travel_app:
+  travel_app_old:
     dependency: "direct main"
     description:
-      path: "packages/travel_app"
+      path: "packages/travel_app_old"
       relative: true
     source: path
     version: "0.1.0"

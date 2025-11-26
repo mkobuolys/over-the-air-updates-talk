@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:travel_app/travel_app.dart';
+import 'package:travel_app_old/travel_app.dart';
 
 import '../../extensions/extensions.dart';
 
@@ -21,7 +21,7 @@ class TravelAppDemoSlide extends FlutterDeckSlideWidget {
         spacing: 64.0,
         children: [
           Expanded(flex: 2, child: Image.asset(context.getThemeAssetName('flutter_genui_architecture.png'))),
-          const Expanded(child: TravelApp()),
+          const Expanded(child: TravelAppOld()),
         ],
       ),
     );

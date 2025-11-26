@@ -279,7 +279,7 @@ class _ListingsBookerState extends State<_ListingsBooker> {
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
                             listing.images.first,
-                            package: 'travel_app',
+                            package: 'travel_app_old',
                             width: 80,
                             height: 80,
                             fit: BoxFit.contain,
