@@ -44,7 +44,7 @@ final Catalog travelAppCatalog = CoreCatalogItems.asCatalog()
       dateInputChip,
       informationCard,
       inputGroup,
-      itinerary,
+      // itinerary,
       listingsBooker,
       optionsFilterChipInput,
       tabbedSections,

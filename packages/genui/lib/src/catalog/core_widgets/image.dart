@@ -13,10 +13,7 @@ import '../../primitives/simple_items.dart';
 
 Schema _schema({required bool enableUsageHint}) {
   final Map<String, Schema> properties = {
-    'url': A2uiSchemas.stringReference(
-      description:
-          'Asset path (e.g. assets/...) or network URL (e.g. https://...)',
-    ),
+    'url': A2uiSchemas.stringReference(description: 'Asset path (e.g. assets/...) or network URL (e.g. https://...)'),
     'fit': S.string(
       description: 'How the image should be inscribed into the box.',
       enumValues: BoxFit.values.map((e) => e.name).toList(),
@@ -32,14 +29,7 @@ A hint for the image size and style. One of:
       - mediumFeature: Medium feature image.
       - largeFeature: Large feature image.
       - header: Full-width, full bleed, header image.''',
-      enumValues: [
-        'icon',
-        'avatar',
-        'smallFeature',
-        'mediumFeature',
-        'largeFeature',
-        'header',
-      ],
+      enumValues: ['icon', 'avatar', 'smallFeature', 'mediumFeature', 'largeFeature', 'header'],
     );
   }
   return S.object(properties: properties);
@@ -50,9 +40,7 @@ extension type _ImageData.fromMap(JsonMap _json) {
       _ImageData.fromMap({'url': url, 'fit': fit, 'usageHint': usageHint});
 
   JsonMap get url => _json['url']! as JsonMap;
-  BoxFit? get fit => _json['fit'] != null
-      ? BoxFit.values.firstWhere((e) => e.name == _json['fit']! as String)
-      : null;
+  BoxFit? get fit => _json['fit'] != null ? BoxFit.values.firstWhere((e) => e.name == _json['fit']! as String) : null;
   String? get usageHint => _json['usageHint'] as String?;
 }
 
@@ -87,8 +75,7 @@ CatalogItem _imageCatalogItem({
     ],
     widgetBuilder: (itemContext) {
       final imageData = _ImageData.fromMap(itemContext.data as JsonMap);
-      final ValueNotifier<String?> notifier = itemContext.dataContext
-          .subscribeToString(imageData.url);
+      final ValueNotifier<String?> notifier = itemContext.dataContext.subscribeToString(imageData.url);
 
       return ValueListenableBuilder<String?>(
         valueListenable: notifier,
@@ -107,7 +94,7 @@ CatalogItem _imageCatalogItem({
           late Widget child;
 
           if (location.startsWith('assets/')) {
-            child = Image.asset(location, fit: fit);
+            child = Image.asset(location, package: 'travel_app', fit: fit);
           } else {
             child = Image.network(location, fit: fit);
           }

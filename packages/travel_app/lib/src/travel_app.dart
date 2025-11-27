@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:genui/genui.dart';
 
 import 'travel_planner_page.dart';
 
@@ -12,12 +11,7 @@ const _title = 'Agentic Travel Inc';
 /// user interface.
 class TravelApp extends StatelessWidget {
   /// Creates a new [TravelApp].
-  ///
-  /// The optional [contentGenerator] can be used to inject a specific AI
-  /// client, which is useful for testing with a mock implementation.
-  const TravelApp({this.contentGenerator, super.key});
-
-  final ContentGenerator? contentGenerator;
+  const TravelApp();
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +19,13 @@ class TravelApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: _title,
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue)),
-      home: _TravelAppBody(contentGenerator),
+      home: const _TravelAppBody(),
     );
   }
 }
 
 class _TravelAppBody extends StatelessWidget {
-  const _TravelAppBody(this.contentGenerator);
-
-  /// The AI client to use for the application.
-  ///
-  /// If null, a default [FirebaseAiContentGenerator] will be created by the
-  /// [TravelPlannerPage].
-  final ContentGenerator? contentGenerator;
+  const _TravelAppBody();
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +41,7 @@ class _TravelAppBody extends StatelessWidget {
           ],
         ),
       ),
-      body: TravelPlannerPage(contentGenerator: contentGenerator),
+      body: const TravelPlannerPage(),
     );
   }
 }

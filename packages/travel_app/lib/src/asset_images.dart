@@ -13,6 +13,6 @@ const assetImageCatalogJsonFile = '$assetImageCatalogPath/_images.json';
 /// Loads the asset image catalog from the asset bundle and prepends the asset
 /// path to the image file names.
 Future<String> assetImageCatalogJson() async {
-  String result = await rootBundle.loadString(assetImageCatalogJsonFile);
+  String result = await rootBundle.loadString('packages/travel_app/$assetImageCatalogJsonFile');
   return result = result.replaceAll('"image_file_name": "', '"image_file_name": "$assetImageCatalogPath/');
 }

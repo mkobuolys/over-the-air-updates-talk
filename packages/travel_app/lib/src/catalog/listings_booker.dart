@@ -260,7 +260,13 @@ class _ListingsBookerState extends State<_ListingsBooker> {
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(listing.images.first, width: 80, height: 80, fit: BoxFit.contain),
+                          child: Image.asset(
+                            listing.images.first,
+                            package: 'travel_app',
+                            width: 80,
+                            height: 80,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(

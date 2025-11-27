@@ -30,69 +30,63 @@ Future<void> loadImagesJson() async {
 /// generated UI, and a menu to switch between different AI models.
 class TravelPlannerPage extends StatefulWidget {
   /// Creates a new [TravelPlannerPage].
-  ///
-  /// An optional [contentGenerator] can be provided, which is useful for
-  /// testing or using a custom AI client implementation. If not provided, a
-  /// default [FirebaseAiContentGenerator] is created.
-  const TravelPlannerPage({this.contentGenerator, super.key});
-
-  /// The AI client to use for the application.
-  ///
-  /// If null, a default instance of [FirebaseAiContentGenerator] will be
-  /// created within the page's state.
-  final ContentGenerator? contentGenerator;
+  const TravelPlannerPage();
 
   @override
   State<TravelPlannerPage> createState() => _TravelPlannerPageState();
 }
 
 class _TravelPlannerPageState extends State<TravelPlannerPage> with AutomaticKeepAliveClientMixin {
-  late final GenUiConversation _uiConversation;
   late final StreamSubscription<ChatMessage> _userMessageSubscription;
+
+  GenUiConversation? _uiConversation;
 
   final _textController = TextEditingController();
   final _scrollController = ScrollController();
 
   @override
-  void initState() {
-    super.initState();
+  void dispose() {
+    _userMessageSubscription.cancel();
+    _uiConversation?.dispose();
+    _textController.dispose();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
     final genUiManager = GenUiManager(
       catalog: travelAppCatalog,
       configuration: const GenUiConfiguration(actions: ActionsConfig()),
     );
     _userMessageSubscription = genUiManager.onSubmit.listen(_handleUserMessageFromUi);
-    final ContentGenerator contentGenerator =
-        widget.contentGenerator ??
-        FirebaseAiContentGenerator(
-          catalog: travelAppCatalog,
-          systemInstruction: prompt,
-          additionalTools: [ListHotelsTool(onListHotels: BookingService.instance.listHotels)],
-        );
-    _uiConversation = GenUiConversation(
-      genUiManager: genUiManager,
-      contentGenerator: contentGenerator,
-      onSurfaceUpdated: (update) {
-        _scrollToBottom();
-      },
-      onSurfaceAdded: (update) {
-        _scrollToBottom();
-      },
-      onTextResponse: (text) {
-        if (!mounted) return;
-        if (text.isNotEmpty) {
-          _scrollToBottom();
-        }
-      },
-    );
-  }
 
-  @override
-  void dispose() {
-    _userMessageSubscription.cancel();
-    _uiConversation.dispose();
-    _textController.dispose();
-    _scrollController.dispose();
-    super.dispose();
+    loadImagesJson().then((_) {
+      final contentGenerator = FirebaseAiContentGenerator(
+        catalog: travelAppCatalog,
+        systemInstruction: prompt,
+        additionalTools: [ListHotelsTool(onListHotels: BookingService.instance.listHotels)],
+      );
+      _uiConversation = GenUiConversation(
+        genUiManager: genUiManager,
+        contentGenerator: contentGenerator,
+        onSurfaceUpdated: (update) {
+          _scrollToBottom();
+        },
+        onSurfaceAdded: (update) {
+          _scrollToBottom();
+        },
+        onTextResponse: (text) {
+          if (!mounted) return;
+          if (text.isNotEmpty) {
+            _scrollToBottom();
+          }
+        },
+      );
+      setState(() {});
+    });
   }
 
   void _scrollToBottom() {
@@ -108,7 +102,7 @@ class _TravelPlannerPageState extends State<TravelPlannerPage> with AutomaticKee
   }
 
   Future<void> _triggerInference(ChatMessage message) async {
-    await _uiConversation.sendRequest(message);
+    await _uiConversation!.sendRequest(message);
   }
 
   void _handleUserMessageFromUi(ChatMessage message) {
@@ -116,7 +110,7 @@ class _TravelPlannerPageState extends State<TravelPlannerPage> with AutomaticKee
   }
 
   void _sendPrompt(String text) {
-    if (_uiConversation.isProcessing.value || text.trim().isEmpty) return;
+    if (_uiConversation!.isProcessing.value || text.trim().isEmpty) return;
     _scrollToBottom();
     _textController.clear();
     _triggerInference(UserMessage.text(text));
@@ -125,6 +119,11 @@ class _TravelPlannerPageState extends State<TravelPlannerPage> with AutomaticKee
   @override
   Widget build(BuildContext context) {
     super.build(context);
+
+    if (_uiConversation == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
     return SafeArea(
       child: Center(
         child: Column(
@@ -133,11 +132,11 @@ class _TravelPlannerPageState extends State<TravelPlannerPage> with AutomaticKee
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 1000),
                 child: ValueListenableBuilder<List<ChatMessage>>(
-                  valueListenable: _uiConversation.conversation,
+                  valueListenable: _uiConversation!.conversation,
                   builder: (context, messages, child) {
                     return Conversation(
                       messages: messages,
-                      manager: _uiConversation.genUiManager,
+                      manager: _uiConversation!.genUiManager,
                       scrollController: _scrollController,
                     );
                   },
@@ -147,7 +146,7 @@ class _TravelPlannerPageState extends State<TravelPlannerPage> with AutomaticKee
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ValueListenableBuilder<bool>(
-                valueListenable: _uiConversation.isProcessing,
+                valueListenable: _uiConversation!.isProcessing,
                 builder: (context, isThinking, child) {
                   return _ChatInput(controller: _textController, isThinking: isThinking, onSend: _sendPrompt);
                 },
