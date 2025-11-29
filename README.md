@@ -36,13 +36,3 @@ For the best experience, use the macOS build with the `--release` flag:
 ```
 flutter run -d macos --release
 ```
-
-### Enabling generative AI features
-
-To enable the generative AI features in the slides (using Gemini), you need to pass the `GEMINI_API_KEY` environment variable to the app. You can do this by using the `--dart-define` flag when running the app:
-
-```
-flutter run --dart-define GEMINI_API_KEY=your_api_key
-```
-
-You can get your API key from the [Google AI Studio](https://aistudio.google.com). Do not forget to replace `your_api_key` with your actual API key. Make sure to keep your API key secret and do not share it with anyone.

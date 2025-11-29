@@ -9,13 +9,11 @@ import 'gemini_repository.dart';
 class AISlideContent extends StatefulWidget {
   const AISlideContent({
     required this.topicPrompt,
-    required this.useFakeContent,
     required this.onContentGenerated,
     super.key,
   });
 
   final String topicPrompt;
-  final bool useFakeContent;
   final ValueSetter<String> onContentGenerated;
 
   @override
@@ -42,9 +40,7 @@ class _AISlideContentState extends State<AISlideContent> {
     _runtime.update(_widgetsLibraryName, createCoreWidgets());
     _runtime.update(_materialLibraryName, createMaterialWidgets());
 
-    _repository = widget.useFakeContent
-        ? const FakeGeminiRepository()
-        : GeminiRepository(client: GeminiClient());
+    _repository = GeminiRepository(client: GeminiClient());
   }
 
   @override

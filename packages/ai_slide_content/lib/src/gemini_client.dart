@@ -1,20 +1,14 @@
-import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:firebase_ai/firebase_ai.dart';
 
 class GeminiClient {
   GeminiClient()
-      : _model = GenerativeModel(
-          model: 'gemini-2.0-flash',
-          apiKey: const String.fromEnvironment('GEMINI_API_KEY'),
+      : _model = FirebaseAI.googleAI().generativeModel(
+          model: 'gemini-2.5-flash',
           generationConfig: GenerationConfig(
             responseMimeType: 'application/json',
-            responseSchema: Schema.object(
-              properties: {
-                'code': Schema.string(
-                  description: 'The generated slide content.',
-                  nullable: false,
-                ),
-              },
-              requiredProperties: ['code'],
+            responseSchema: Schema.string(
+              description: 'The generated slide content in RFW format.',
+              nullable: false,
             ),
           ),
         );

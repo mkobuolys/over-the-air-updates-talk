@@ -7,11 +7,11 @@ environment:
   sdk: ^3.6.2
 
 dependencies:
+  cupertino_icons: ^1.0.8
+  firebase_ai: ^3.2.0
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
   rfw: ^1.0.31
-  google_generative_ai: ^0.4.6
   shimmer: ^3.0.0
 
 dev_dependencies:

@@ -19,11 +19,15 @@ widget root = Row(
             style: { fontSize: 80.0 },
           ),
           SizedBox(height: 48.0),
-          FactRow(text: "Written in the early 14th century."),
-          SizedBox(height: 32.0),
-          FactRow(text: "Divided into Inferno, Purgatorio, and Paradiso."),
-          SizedBox(height: 32.0),
-          FactRow(text: "Considered one of the greatest works of world literature."),
+          Expanded(
+            child: ListView(
+              children: [
+                FactRow(text: "Written in the early 14th century."),
+                FactRow(text: "Divided into Inferno, Purgatorio, and Paradiso."),
+                FactRow(text: "Considered one of the greatest works of world literature."),
+              ],
+            ),
+          ),
         ],
       ),
     ),
@@ -67,7 +71,9 @@ class GeminiRepository {
 
       if (response == null) return null;
 
-      if (jsonDecode(response) case {'code': String code}) return code;
+      final code = jsonDecode(response);
+
+      if (code is String) return code;
 
       return null;
     } catch (e) {
