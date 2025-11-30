@@ -183,27 +183,36 @@ class _TravelPlannerPageState extends State<TravelPlannerPage>
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Column(
-            children: [
-              Expanded(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 1000),
-                  child: Conversation(
-                    messages: _conversation,
-                    manager: _genUiManager,
-                    scrollController: _scrollController,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1000),
+            child: Column(
+              children: [
+                Expanded(
+                  child: _conversation.isNotEmpty
+                      ? Conversation(
+                          messages: _conversation,
+                          manager: _genUiManager,
+                          scrollController: _scrollController,
+                        )
+                      : const Center(
+                          child: Text(
+                            'Welcome to Agentic Travel Inc.\n\n'
+                            'Where will your next adventure take you? 🏝️',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 24.0),
+                          ),
+                        ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _ChatInput(
+                    controller: _textController,
+                    isThinking: _isThinking,
+                    onSend: _sendPrompt,
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _ChatInput(
-                  controller: _textController,
-                  isThinking: _isThinking,
-                  onSend: _sendPrompt,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -227,36 +236,44 @@ class _ChatInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      elevation: 2.0,
-      borderRadius: BorderRadius.circular(25.0),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-        child: Row(
-          children: [
-            Expanded(
+    final colorScheme = Theme.of(context).colorScheme;
+    const hintText = 'Enter your prompt...';
+
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: colorScheme.primary, width: 2.0),
+        borderRadius: BorderRadius.circular(64.0),
+      ),
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: TextField(
                 controller: controller,
                 enabled: !isThinking,
-                decoration: const InputDecoration.collapsed(
-                  hintText: 'Enter your prompt...',
+                decoration: const InputDecoration(
+                  hintText: hintText,
+                  border: InputBorder.none,
                 ),
                 onSubmitted: isThinking ? null : onSend,
               ),
             ),
-            if (isThinking)
-              const SizedBox(
-                width: 24,
-                height: 24,
-                child: CircularProgressIndicator(strokeWidth: 2.0),
-              )
-            else
-              IconButton(
-                icon: const Icon(Icons.send),
-                onPressed: () => onSend(controller.text),
-              ),
-          ],
-        ),
+          ),
+          if (isThinking)
+            const CircularProgressIndicator(
+              padding: EdgeInsets.all(16.0),
+              strokeWidth: 4.0,
+            )
+          else
+            IconButton.filled(
+              icon: const Icon(Icons.send),
+              iconSize: 36.0,
+              padding: const EdgeInsets.all(16.0),
+              onPressed: () => onSend(controller.text),
+            ),
+        ],
       ),
     );
   }

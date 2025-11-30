@@ -161,7 +161,7 @@ class _TravelCarousel extends StatelessWidget {
           const SizedBox(height: 16.0),
         ],
         SizedBox(
-          height: 240,
+          height: 450,
           child: ScrollConfiguration(
             behavior: _DesktopAndWebScrollBehavior(),
             child: ListView.separated(
@@ -210,7 +210,7 @@ class _TravelCarouselItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 190,
+      width: 400,
       child: InkWell(
         onTap: () {
           dispatchEvent(
@@ -231,10 +231,10 @@ class _TravelCarouselItem extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
-              child: SizedBox(height: 150, width: 190, child: data.imageChild),
+              child: SizedBox(height: 250, width: 400, child: data.imageChild),
             ),
             Container(
-              height: 90,
+              height: 200,
               padding: const EdgeInsets.all(8.0),
               alignment: Alignment.center,
               child: Text(

@@ -22,7 +22,19 @@ class TravelAppOld extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Agentic Travel Inc.',
-      theme: theme,
+      theme: theme.copyWith(
+        bottomSheetTheme: const BottomSheetThemeData(
+          constraints: BoxConstraints(maxWidth: 800.0),
+        ),
+      ),
+      builder: (context, child) {
+        final textScaler = const TextScaler.linear(2);
+
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaler: textScaler),
+          child: child!,
+        );
+      },
       home: const TravelPlannerPage(),
     );
   }
