@@ -1,7 +1,8 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-import '../widgets/labeled_image.dart';
+import '../helpers/helpers.dart';
+import '../widgets/widgets.dart';
 
 class SummarySlide extends FlutterDeckSlideWidget {
   const SummarySlide()
@@ -15,6 +16,8 @@ class SummarySlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = Theme.of(context).colorScheme.onPrimary;
+
     return FlutterDeckSlide.split(
       leftBuilder: (context) => FlutterDeckBulletList(
         items: const [
@@ -23,9 +26,10 @@ class SummarySlide extends FlutterDeckSlideWidget {
           'Leverage the power of GenAI to build dynamic user experiences',
         ],
       ),
-      rightBuilder: (context) => const LabeledImage(
+      rightBuilder: (context) => LabeledImage(
         assetName: 'assets/summary.png',
-        label: 'Image generated using Picsart from the prompt "Summary, Etching, Gustave Doré"',
+        label: getPicsartPromptLabel("Header image 'Summary', OTA updates"),
+        textStyle: FlutterDeckImageSlideTheme.of(context).labelTextStyle?.copyWith(color: color),
       ),
     );
   }
