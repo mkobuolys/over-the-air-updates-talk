@@ -10,11 +10,15 @@ import 'theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseAppCheck.instance.activate(
-    appleProvider: AppleProvider.debug,
-    webProvider: ReCaptchaV3Provider('debug'),
-  );
+
+  if (const bool.fromEnvironment('GEMINI_ENABLED')) {
+    // Comment out the following lines if you do not want to use Firebase for Gemini features
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    await FirebaseAppCheck.instance.activate(
+      appleProvider: AppleProvider.debug,
+      webProvider: ReCaptchaV3Provider('debug'),
+    );
+  }
 
   runApp(const _FlutterDeckApp());
 }

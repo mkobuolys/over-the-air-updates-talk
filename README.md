@@ -36,3 +36,13 @@ For the best experience, use the macOS build with the `--release` flag:
 ```
 flutter run -d macos --release
 ```
+
+### Enabling Gemini features
+
+To enable Gemini features, follow the instructions provided in the [Firebase AI Logic documentation](https://firebase.google.com/docs/ai-logic/get-started).
+
+Then, run the following command:
+
+```
+flutter run -d macos --release --dart-define=GEMINI_ENABLED=true
+```

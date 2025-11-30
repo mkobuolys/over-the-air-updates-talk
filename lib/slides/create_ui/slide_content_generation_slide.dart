@@ -2,6 +2,8 @@ import 'package:ai_slide_content/ai_slide_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
+import '../../widgets/widgets.dart';
+
 class SlideContentGenerationSlide extends FlutterDeckSlideWidget {
   const SlideContentGenerationSlide()
     : super(
@@ -13,7 +15,10 @@ class SlideContentGenerationSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlide.blank(builder: (context) => const _Content());
+    return FlutterDeckSlide.blank(
+      builder: (context) =>
+          const bool.fromEnvironment('GEMINI_ENABLED') ? const _Content() : const GeminiDisabledPrompt(),
+    );
   }
 }
 

@@ -23,6 +23,7 @@ dependencies:
     path: packages/rfw_demo
   travel_app_old:
     path: packages/travel_app_old
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
