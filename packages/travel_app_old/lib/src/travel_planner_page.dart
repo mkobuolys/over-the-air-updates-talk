@@ -31,17 +31,7 @@ Future<void> loadImagesJson() async {
 /// generated UI, and a menu to switch between different AI models.
 class TravelPlannerPage extends StatefulWidget {
   /// Creates a new [TravelPlannerPage].
-  ///
-  /// An optional [aiClient] can be provided, which is useful for testing
-  /// or using a custom AI client implementation. If not provided, a default
-  /// [FirebaseAiClient] is created.
-  const TravelPlannerPage({this.aiClient, super.key});
-
-  /// The AI client to use for the application.
-  ///
-  /// If null, a default instance of [FirebaseAiClient] will be created within
-  /// the page's state.
-  final AiClient? aiClient;
+  const TravelPlannerPage();
 
   @override
   State<TravelPlannerPage> createState() => _TravelPlannerPageState();
@@ -76,9 +66,7 @@ class _TravelPlannerPageState extends State<TravelPlannerPage>
     final tools = _genUiManager.getTools();
     tools.add(ListHotelsTool(onListHotels: BookingService.instance.listHotels));
     loadImagesJson().then((_) {
-      _aiClient =
-          widget.aiClient ??
-          FirebaseAiClient(tools: tools, systemInstruction: prompt);
+      _aiClient = FirebaseAiClient(tools: tools, systemInstruction: prompt);
     });
     _genUiManager.surfaceUpdates.listen((update) {
       setState(() {
@@ -192,29 +180,31 @@ class _TravelPlannerPageState extends State<TravelPlannerPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return SafeArea(
-      child: Center(
-        child: Column(
-          children: [
-            Expanded(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1000),
-                child: Conversation(
-                  messages: _conversation,
-                  manager: _genUiManager,
-                  scrollController: _scrollController,
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              Expanded(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 1000),
+                  child: Conversation(
+                    messages: _conversation,
+                    manager: _genUiManager,
+                    scrollController: _scrollController,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: _ChatInput(
-                controller: _textController,
-                isThinking: _isThinking,
-                onSend: _sendPrompt,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: _ChatInput(
+                  controller: _textController,
+                  isThinking: _isThinking,
+                  onSend: _sendPrompt,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

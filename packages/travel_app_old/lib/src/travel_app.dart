@@ -3,8 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_genui/flutter_genui.dart';
-import 'package:flutter_genui_firebase_ai/flutter_genui_firebase_ai.dart';
 
 import 'travel_planner_page.dart';
 
@@ -15,47 +13,17 @@ import 'travel_planner_page.dart';
 /// user interface.
 class TravelAppOld extends StatelessWidget {
   /// Creates a new [TravelAppOld].
-  ///
-  /// The optional [aiClient] can be used to inject a specific AI client,
-  /// which is useful for testing with a mock implementation.
-  const TravelAppOld({this.aiClient, super.key});
+  const TravelAppOld({required this.theme});
 
-  final AiClient? aiClient;
+  final ThemeData theme;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Agentic Travel Inc.',
-      home: _TravelAppBody(aiClient),
-    );
-  }
-}
-
-class _TravelAppBody extends StatelessWidget {
-  _TravelAppBody(this.aiClient);
-
-  /// The AI client to use for the application.
-  ///
-  /// If null, a default [FirebaseAiClient] will be created by the
-  /// [TravelPlannerPage].
-  final AiClient? aiClient;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(Icons.local_airport),
-            SizedBox(width: 16.0), // Add spacing between icon and text
-            Text('Agentic Travel Inc.'),
-          ],
-        ),
-      ),
-      body: TravelPlannerPage(aiClient: aiClient),
+      theme: theme,
+      home: const TravelPlannerPage(),
     );
   }
 }
